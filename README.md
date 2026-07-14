@@ -89,15 +89,10 @@ apm install diogolopesAV/rty-aip-hub --target claude
 ```bash
 # Simplest — if GitHub CLI is already authenticated:
 gh auth login
+# APM auto-detects gh credentials — no extra setup needed.
 
-# Without gh CLI — set a PAT:
+# Without gh CLI — export a PAT with contents:read on Riverty-Tech-Innovation:
 export GITHUB_APM_PAT=ghp_your_token_here
-```
-
-For org-scoped auth (hyphens → underscores, uppercase org name):
-
-```bash
-export GITHUB_APM_PAT_RIVERTY_TECH_INNOVATION=ghp_token_for_riverty
 ```
 
 Once set, all APM commands — `apm marketplace add`, `apm install`, bundle installs — resolve private repos automatically.
