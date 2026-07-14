@@ -38,12 +38,12 @@ marketplace:
     # External — maintained in separate Riverty repos (private: requires GITHUB_APM_PAT)
     - name: bip-python-skill
       source: Riverty-Tech-Innovation/bip-python-skill
-      ref: main
+      ref: a54a2102db113824db71cccf1241cdae62d2ebdb
       description: "Python coding practices for maintainable, secure, and scalable code following BIP standards"
       tags: [skill, bip, python]
     - name: bip-terraform-skill
       source: Riverty-Tech-Innovation/bip-terraform-skill
-      ref: main
+      ref: 89fe35c95bcf9adffa1a1d03118f9cfa7285924f
       description: "Terraform coding practices for maintainable, secure IaC following BIP standards"
       tags: [skill, bip, terraform, iac]
 
@@ -54,5 +54,5 @@ dependencies:
     - diogolopesAV/rty-aip-hub/packages/rty-skill-authoring
     - diogolopesAV/rty-aip-hub/packages/rty-web-accessibility
     - diogolopesAV/rty-aip-hub/packages/rty-terraform-azure-cdn-classic-migration
-    - Riverty-Tech-Innovation/bip-python-skill
-    - Riverty-Tech-Innovation/bip-terraform-skill
+    - Riverty-Tech-Innovation/bip-python-skill#a54a2102db113824db71cccf1241cdae62d2ebdb
+    - Riverty-Tech-Innovation/bip-terraform-skill#89fe35c95bcf9adffa1a1d03118f9cfa7285924f

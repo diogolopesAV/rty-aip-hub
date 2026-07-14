@@ -9,5 +9,5 @@ license: MIT
 # Set GITHUB_APM_PAT with read access to Riverty-Tech-Innovation before installing.
 dependencies:
   apm:
-    - Riverty-Tech-Innovation/bip-python-skill
-    - Riverty-Tech-Innovation/bip-terraform-skill
+    - Riverty-Tech-Innovation/bip-python-skill#a54a2102db113824db71cccf1241cdae62d2ebdb
+    - Riverty-Tech-Innovation/bip-terraform-skill#89fe35c95bcf9adffa1a1d03118f9cfa7285924f
