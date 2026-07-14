@@ -1,0 +1,13 @@
+name: rty-hub-bip
+version: 1.0.0
+description: "Riverty BIP team bundle — Python and Terraform coding standards"
+license: MIT
+# BIP-focused bundle for teams that work with Python and Terraform.
+# Install all BIP packages at once:
+#   apm install diogolopesAV/rty-aip-hub/bundles/bip --target claude
+# Note: bip-python-skill and bip-terraform-skill are private repos.
+# Set GITHUB_APM_PAT with read access to Riverty-Tech-Innovation before installing.
+dependencies:
+  apm:
+    - Riverty-Tech-Innovation/bip-python-skill
+    - Riverty-Tech-Innovation/bip-terraform-skill

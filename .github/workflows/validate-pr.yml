@@ -1,0 +1,29 @@
+name: Validate PR
+
+on:
+  pull_request:
+    paths:
+      - apm.yml
+      - packages/**
+      - bundles/**
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: microsoft/apm-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          # For private dependency repos (bip-python-skill, bip-terraform-skill):
+          # store a PAT with contents:read on Riverty-Tech-Innovation as the APM_PAT
+          # repository secret. Falls back to GITHUB_TOKEN (sufficient for public repos only).
+          GITHUB_APM_PAT: ${{ secrets.APM_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Validate central marketplace
+        run: apm pack --dry-run --check-clean
+        env:
+          GITHUB_APM_PAT: ${{ secrets.APM_PAT || secrets.GITHUB_TOKEN }}

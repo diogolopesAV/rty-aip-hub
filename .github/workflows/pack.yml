@@ -1,0 +1,40 @@
+name: Pack marketplace
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - apm.yml
+      - packages/**
+      - bundles/**
+
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: microsoft/apm-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          # For private dependency repos (bip-python-skill, bip-terraform-skill):
+          # store a PAT with contents:read on Riverty-Tech-Innovation as the APM_PAT
+          # repository secret. Falls back to GITHUB_TOKEN (sufficient for public repos only).
+          GITHUB_APM_PAT: ${{ secrets.APM_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Pack central marketplace
+        run: apm pack
+        env:
+          GITHUB_APM_PAT: ${{ secrets.APM_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Commit generated pack outputs
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+          git add .claude-plugin/marketplace.json .claude-plugin/plugin.json .github/plugin/plugin.json
+          git diff --staged --quiet || git commit -m "chore: regenerate pack outputs [skip ci]"
+          git push

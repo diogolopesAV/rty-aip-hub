@@ -1,0 +1,11 @@
+name: rty-hub-ai
+version: 1.0.0
+description: "Riverty AI skills bundle — Atlassian MCP setup and skill authoring"
+license: MIT
+# AI-focused bundle for teams that need Atlassian tool access and skill authoring.
+# Install all AI packages at once:
+#   apm install diogolopesAV/rty-aip-hub/bundles/ai --target claude
+dependencies:
+  apm:
+    - diogolopesAV/rty-aip-hub/packages/rty-atlassian-mcp
+    - diogolopesAV/rty-aip-hub/packages/rty-skill-authoring
