@@ -170,13 +170,50 @@ APM auto-detects the package type from the repo structure:
 | `.apm/` directory | APM Package (skills + agents + commands + hooks) |
 | `hooks/*.json` only | Hook Package |
 
-### If the package belongs to a bundle
+### If the package belongs to an existing bundle
 
-Add it to the relevant bundle under `bundles/<domain>/apm.yml`.
+Add its entry to the relevant bundle under `bundles/<domain>/apm.yml`:
+
+```yaml
+dependencies:
+  apm:
+    - diogolopesAV/rty-aip-hub/packages/rty-your-package-name
+```
+
+### If you're creating a new domain bundle
+
+Create `bundles/<domain>/apm.yml` when a domain has 2 or more packages. Use an existing bundle as reference:
+
+```yaml
+name: rty-hub-<domain>
+version: 1.0.0
+description: "Riverty <domain> bundle — short description"
+license: MIT
+dependencies:
+  apm:
+    - diogolopesAV/rty-aip-hub/packages/rty-first-package
+    - diogolopesAV/rty-aip-hub/packages/rty-second-package
+```
+
+**Current bundle status:**
+
+| Bundle | Domain | Packages |
+|--------|--------|---------|
+| `bundles/ai` | AI tooling | `rty-atlassian-mcp`, `rty-skill-authoring` |
+| `bundles/bip` | BIP standards | `bip-python-skill`, `bip-terraform-skill` |
+| `bundles/design-system` | _(not yet created)_ | Waiting for a second design-system package alongside `rty-web-accessibility` |
 
 ### CI
 
 Opening a PR runs `apm pack --dry-run --check-clean` to validate all source refs. Merging to main regenerates `.claude-plugin/marketplace.json` automatically.
+
+### Reproducing an exact environment
+
+Once a project has an `apm.lock.yaml`, teammates can reproduce it exactly:
+
+```bash
+apm install --frozen
+```
 
 ---
 
