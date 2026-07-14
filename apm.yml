@@ -38,10 +38,12 @@ marketplace:
     # External — maintained in separate Riverty repos (private: requires GITHUB_APM_PAT)
     - name: bip-python-skill
       source: Riverty-Tech-Innovation/bip-python-skill
+      ref: main
       description: "Python coding practices for maintainable, secure, and scalable code following BIP standards"
       tags: [skill, bip, python]
     - name: bip-terraform-skill
       source: Riverty-Tech-Innovation/bip-terraform-skill
+      ref: main
       description: "Terraform coding practices for maintainable, secure IaC following BIP standards"
       tags: [skill, bip, terraform, iac]
 
