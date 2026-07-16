@@ -52,16 +52,18 @@
     },
     {
       "name": "rty-test-plugin",
-      "description": "Minimal validation plugin for the rty-aip-hub external plugin subtree strategy",
+      "description": "Reference plugin demonstrating all supported plugin primitives (skills, hooks, MCP, rules)",
       "tags": [
         "skill",
-        "test"
+        "test",
+        "hooks",
+        "mcp"
       ],
       "source": {
         "source": "github",
         "repo": "diogolopesAV/rty-test-plugin",
-        "ref": "a046d3dd18c22c39030963bb6eea016dc58d7e2c",
-        "sha": "a046d3dd18c22c39030963bb6eea016dc58d7e2c"
+        "ref": "35de0c8b847b2f7a37c846ef4234ca3a225d9c00",
+        "sha": "35de0c8b847b2f7a37c846ef4234ca3a225d9c00"
       }
     },
     {
