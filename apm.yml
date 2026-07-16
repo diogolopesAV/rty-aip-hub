@@ -43,13 +43,13 @@ marketplace:
       category: Developer Tools
       description: "Guide Azure CDN Classic to Azure Front Door migration for Terraform-managed environments"
       tags: [skill, azure, terraform, migration]
-    # External plugins — testing git ref strategy (apm-native GitHub ref, generates github source object)
+    # External plugin (git ref strategy) — no local copy; APM resolves from GitHub at install time
     - name: rty-test-plugin
       source: diogolopesAV/rty-test-plugin
-      ref: a046d3dd18c22c39030963bb6eea016dc58d7e2c
+      ref: 35de0c8b847b2f7a37c846ef4234ca3a225d9c00
       category: Developer Tools
-      description: "Minimal validation plugin for the rty-aip-hub external plugin subtree strategy"
-      tags: [skill, test]
+      description: "Reference plugin demonstrating all supported plugin primitives (skills, hooks, MCP, rules)"
+      tags: [skill, test, hooks, mcp]
     # External skill-only repos — APM-native refs (no platform manifests; private: requires GITHUB_APM_PAT)
     - name: bip-python-skill
       source: Riverty-Tech-Innovation/bip-python-skill
@@ -71,6 +71,6 @@ dependencies:
     - diogolopesAV/rty-aip-hub/plugins/rty-skill-authoring
     - diogolopesAV/rty-aip-hub/plugins/rty-web-accessibility
     - diogolopesAV/rty-aip-hub/plugins/rty-terraform-azure-cdn-classic-migration
-    - diogolopesAV/rty-aip-hub/plugins/rty-test-plugin
+    - diogolopesAV/rty-test-plugin#35de0c8b847b2f7a37c846ef4234ca3a225d9c00
     - Riverty-Tech-Innovation/bip-python-skill#a54a2102db113824db71cccf1241cdae62d2ebdb
     - Riverty-Tech-Innovation/bip-terraform-skill#89fe35c95bcf9adffa1a1d03118f9cfa7285924f

@@ -1,7 +1,0 @@
-{
-  "name": "rty-test-plugin",
-  "displayName": "Riverty Test Plugin",
-  "version": "1.0.0",
-  "description": "Minimal test plugin to validate the subtree-based external plugin strategy",
-  "skills": "./skills/"
-}
