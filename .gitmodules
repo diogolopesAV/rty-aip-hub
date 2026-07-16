@@ -1,0 +1,3 @@
+[submodule "plugins/rty-test-plugin"]
+	path = plugins/rty-test-plugin
+	url = https://github.com/diogolopesAV/rty-test-plugin
