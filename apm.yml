@@ -43,9 +43,10 @@ marketplace:
       category: Developer Tools
       description: "Guide Azure CDN Classic to Azure Front Door migration for Terraform-managed environments"
       tags: [skill, azure, terraform, migration]
-    # External plugins — vendored via git subtree; pure plugin structure (no nested marketplace.json)
+    # External plugins — testing git ref strategy (apm-native GitHub ref, generates github source object)
     - name: rty-test-plugin
-      source: ./plugins/rty-test-plugin
+      source: diogolopesAV/rty-test-plugin
+      ref: a046d3dd18c22c39030963bb6eea016dc58d7e2c
       category: Developer Tools
       description: "Minimal validation plugin for the rty-aip-hub external plugin subtree strategy"
       tags: [skill, test]
