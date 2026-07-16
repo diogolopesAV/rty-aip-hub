@@ -51,6 +51,15 @@
       "source": "./plugins/rty-terraform-azure-cdn-classic-migration"
     },
     {
+      "name": "rty-test-plugin",
+      "description": "Minimal validation plugin for the rty-aip-hub external plugin subtree strategy",
+      "tags": [
+        "skill",
+        "test"
+      ],
+      "source": "./plugins/rty-test-plugin"
+    },
+    {
       "name": "bip-python-skill",
       "description": "Python coding practices for maintainable, secure, and scalable code following BIP standards",
       "tags": [
