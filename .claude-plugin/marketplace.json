@@ -51,17 +51,6 @@
       "source": "./plugins/rty-terraform-azure-cdn-classic-migration"
     },
     {
-      "name": "azure",
-      "description": "26 Azure-focused skills covering deployment, compliance, AKS, storage, and more (by Microsoft)",
-      "tags": [
-        "skill",
-        "azure",
-        "mcp",
-        "microsoft"
-      ],
-      "source": "./plugins/azure-skills"
-    },
-    {
       "name": "bip-python-skill",
       "description": "Python coding practices for maintainable, secure, and scalable code following BIP standards",
       "tags": [
