@@ -6,7 +6,6 @@ on:
     paths:
       - apm.yml
       - plugins/**
-      - .gitmodules
       - bundles/**
   workflow_dispatch:
 
@@ -18,8 +17,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: recursive
 
       - uses: microsoft/apm-action@v1
         with:

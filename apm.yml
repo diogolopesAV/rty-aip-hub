@@ -43,7 +43,7 @@ marketplace:
       category: Developer Tools
       description: "Guide Azure CDN Classic to Azure Front Door migration for Terraform-managed environments"
       tags: [skill, azure, terraform, migration]
-    # External plugins — full plugin structure, added as git submodules under plugins/
+    # External plugins — full plugin structure, vendored via git subtree into plugins/
     - name: azure
       source: ./plugins/azure-skills
       category: Developer Tools
