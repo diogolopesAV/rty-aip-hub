@@ -1,0 +1,9 @@
+{
+  "name": "rty-test-plugin",
+  "displayName": "Riverty Test Plugin",
+  "version": "1.0.0",
+  "description": "Reference plugin demonstrating all supported primitives for Claude Code and GitHub Copilot CLI: skills, hooks, and MCP servers.",
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "mcpServers": "./.mcp.json"
+}
