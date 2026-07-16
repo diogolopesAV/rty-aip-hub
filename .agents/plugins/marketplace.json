@@ -8,7 +8,7 @@
       "name": "rty-atlassian-mcp",
       "source": {
         "source": "local",
-        "path": "./packages/rty-atlassian-mcp"
+        "path": "./plugins/rty-atlassian-mcp"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -20,7 +20,7 @@
       "name": "rty-skill-authoring",
       "source": {
         "source": "local",
-        "path": "./packages/rty-skill-authoring"
+        "path": "./plugins/rty-skill-authoring"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -32,7 +32,7 @@
       "name": "rty-web-accessibility",
       "source": {
         "source": "local",
-        "path": "./packages/rty-web-accessibility"
+        "path": "./plugins/rty-web-accessibility"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -44,7 +44,7 @@
       "name": "rty-terraform-azure-cdn-classic-migration",
       "source": {
         "source": "local",
-        "path": "./packages/rty-terraform-azure-cdn-classic-migration"
+        "path": "./plugins/rty-terraform-azure-cdn-classic-migration"
       },
       "policy": {
         "installation": "AVAILABLE",
