@@ -80,12 +80,6 @@ apm install diogolopesAV/rty-aip-hub --target claude
 | `rty-web-accessibility` | Ensure HTML/CSS is WCAG 2.1/2.2 Level AA compliant using Riverty web components |
 | `rty-terraform-azure-cdn-classic-migration` | Guide Azure CDN Classic → Azure Front Door migration for Terraform environments |
 
-**External plugins** (vendored into `plugins/` via git subtree, full native UI support)
-
-| Package | What it does | Source |
-|---------|-------------|--------|
-| `azure` | 26 Azure skills — deployment, compliance, AKS, storage, Entra, and more | [microsoft/azure-skills](https://github.com/microsoft/azure-skills) (MIT) |
-
 **External skill-only** (APM CLI only; no platform manifests)
 
 | Package | What it does |
@@ -183,31 +177,6 @@ description: "One sentence. Use when X. Do not use for Y."
 - diogolopesAV/rty-aip-hub/plugins/rty-your-package-name
 ```
 
-### External plugins (full native UI support)
-
-External repos with a complete plugin structure (`.claude-plugin/`, `.cursor-plugin/`, `skills/<name>/SKILL.md`) are vendored in via **git subtree**. Unlike submodules, subtrees copy real files into the hub repo — every marketplace consumer (Claude Desktop, Cursor, Copilot) sees them as ordinary local directories, no special clone flags needed.
-
-```bash
-# Add at a pinned SHA (--squash collapses the external history into one commit)
-git subtree add --prefix plugins/repo-name https://github.com/org/repo <commit-sha> --squash
-
-# Update to a newer SHA later
-git subtree pull --prefix plugins/repo-name https://github.com/org/repo <new-sha> --squash
-```
-
-Then register in `apm.yml` with a local source:
-
-```yaml
-# In marketplace.packages:
-- name: repo-name
-  source: ./plugins/repo-name
-  description: "One sentence."
-  tags: [skill, domain]
-
-# In dependencies.apm:
-- diogolopesAV/rty-aip-hub/plugins/repo-name
-```
-
 ### External skill-only repos (APM CLI only)
 
 Repos that only have `SKILL.md` and no platform manifests (e.g. private team repos) are referenced via APM-native external refs. They appear in APM CLI installs but not in native UI marketplaces:
@@ -267,6 +236,5 @@ rty-aip-hub/
     ├── rty-atlassian-mcp/           # Atlassian MCP setup skill
     ├── rty-skill-authoring/         # Skill authoring meta-skill
     ├── rty-web-accessibility/       # Web accessibility skill
-    ├── rty-terraform-azure-cdn-classic-migration/  # CDN → AFD migration skill
-    └── azure-skills/                # ↳ subtree: microsoft/azure-skills (26 Azure skills)
+    └── rty-terraform-azure-cdn-classic-migration/  # CDN → AFD migration skill
 ```
