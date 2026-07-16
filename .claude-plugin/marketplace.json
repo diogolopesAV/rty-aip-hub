@@ -59,12 +59,7 @@
         "hooks",
         "mcp"
       ],
-      "source": {
-        "source": "github",
-        "repo": "diogolopesAV/rty-test-plugin",
-        "ref": "35de0c8b847b2f7a37c846ef4234ca3a225d9c00",
-        "sha": "35de0c8b847b2f7a37c846ef4234ca3a225d9c00"
-      }
+      "source": "./plugins/rty-test-plugin"
     },
     {
       "name": "bip-python-skill",

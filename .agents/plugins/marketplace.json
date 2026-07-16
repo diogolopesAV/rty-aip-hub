@@ -55,10 +55,8 @@
     {
       "name": "rty-test-plugin",
       "source": {
-        "source": "url",
-        "url": "diogolopesAV/rty-test-plugin",
-        "ref": "35de0c8b847b2f7a37c846ef4234ca3a225d9c00",
-        "sha": "35de0c8b847b2f7a37c846ef4234ca3a225d9c00"
+        "source": "local",
+        "path": "./plugins/rty-test-plugin"
       },
       "policy": {
         "installation": "AVAILABLE",
