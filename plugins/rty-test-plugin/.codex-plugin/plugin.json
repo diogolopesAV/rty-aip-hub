@@ -1,0 +1,16 @@
+{
+  "name": "rty-test-plugin",
+  "version": "1.0.0",
+  "description": "Minimal test plugin to validate the subtree-based external plugin strategy",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Riverty Test Plugin",
+    "shortDescription": "Minimal plugin for validating the hub's external plugin subtree strategy.",
+    "longDescription": "A deliberately minimal plugin with a single skill. Used to validate that the git subtree approach for vendoring external team plugins into rty-aip-hub works correctly across Claude Desktop, Cursor, Codex, and Copilot.",
+    "developerName": "Riverty Technology Innovation",
+    "category": "Developer Tools",
+    "defaultPrompt": "Run the rty-test-plugin validation check."
+  }
+}
