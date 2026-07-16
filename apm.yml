@@ -17,33 +17,43 @@ marketplace:
     name: Riverty Technology Innovation
     url: https://github.com/Riverty-Tech-Innovation
 
+  outputs:
+    claude: {}
+    codex: {}
+
   packages:
     # Riverty-owned — maintained in this repo under packages/
     - name: rty-atlassian-mcp
       source: ./packages/rty-atlassian-mcp
+      category: Developer Tools
       description: "Configure Atlassian's cloud MCP server for Jira and Confluence access in AI agents"
       tags: [skill, ai, confluence, jira, mcp]
     - name: rty-skill-authoring
       source: ./packages/rty-skill-authoring
+      category: Developer Tools
       description: "Create, review, and refine agent skills following Riverty conventions and the agentskills.io specification"
       tags: [skill, ai, workflow]
     - name: rty-web-accessibility
       source: ./packages/rty-web-accessibility
+      category: Developer Tools
       description: "Ensure generated HTML/CSS is WCAG 2.1/2.2 Level AA compliant using Riverty web components"
       tags: [skill, design-system, accessibility, html, css]
     - name: rty-terraform-azure-cdn-classic-migration
       source: ./packages/rty-terraform-azure-cdn-classic-migration
+      category: Developer Tools
       description: "Guide Azure CDN Classic to Azure Front Door migration for Terraform-managed environments"
       tags: [skill, azure, terraform, migration]
     # External — maintained in separate Riverty repos (private: requires GITHUB_APM_PAT)
     - name: bip-python-skill
       source: Riverty-Tech-Innovation/bip-python-skill
       ref: a54a2102db113824db71cccf1241cdae62d2ebdb
+      category: Developer Tools
       description: "Python coding practices for maintainable, secure, and scalable code following BIP standards"
       tags: [skill, bip, python]
     - name: bip-terraform-skill
       source: Riverty-Tech-Innovation/bip-terraform-skill
       ref: 89fe35c95bcf9adffa1a1d03118f9cfa7285924f
+      category: Developer Tools
       description: "Terraform coding practices for maintainable, secure IaC following BIP standards"
       tags: [skill, bip, terraform, iac]
 
