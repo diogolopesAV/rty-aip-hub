@@ -53,18 +53,6 @@
       "category": "Developer Tools"
     },
     {
-      "name": "rty-test-plugin",
-      "source": {
-        "source": "local",
-        "path": "./plugins/rty-test-plugin"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Developer Tools"
-    },
-    {
       "name": "bip-python-skill",
       "source": {
         "source": "url",

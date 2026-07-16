@@ -51,17 +51,6 @@
       "source": "./plugins/rty-terraform-azure-cdn-classic-migration"
     },
     {
-      "name": "rty-test-plugin",
-      "description": "Reference plugin demonstrating all supported plugin primitives (skills, hooks, MCP, rules)",
-      "tags": [
-        "skill",
-        "test",
-        "hooks",
-        "mcp"
-      ],
-      "source": "./plugins/rty-test-plugin"
-    },
-    {
       "name": "bip-python-skill",
       "description": "Python coding practices for maintainable, secure, and scalable code following BIP standards",
       "tags": [
