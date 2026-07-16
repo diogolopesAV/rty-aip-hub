@@ -1,0 +1,3 @@
+[submodule "plugins/azure-skills"]
+	path = plugins/azure-skills
+	url = https://github.com/microsoft/azure-skills

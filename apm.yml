@@ -43,7 +43,13 @@ marketplace:
       category: Developer Tools
       description: "Guide Azure CDN Classic to Azure Front Door migration for Terraform-managed environments"
       tags: [skill, azure, terraform, migration]
-    # External — maintained in separate Riverty repos (private: requires GITHUB_APM_PAT)
+    # External plugins — full plugin structure, added as git submodules under plugins/
+    - name: azure
+      source: ./plugins/azure-skills
+      category: Developer Tools
+      description: "26 Azure-focused skills covering deployment, compliance, AKS, storage, and more (by Microsoft)"
+      tags: [skill, azure, mcp, microsoft]
+    # External skill-only repos — APM-native refs (no platform manifests; private: requires GITHUB_APM_PAT)
     - name: bip-python-skill
       source: Riverty-Tech-Innovation/bip-python-skill
       ref: a54a2102db113824db71cccf1241cdae62d2ebdb
@@ -64,5 +70,6 @@ dependencies:
     - diogolopesAV/rty-aip-hub/plugins/rty-skill-authoring
     - diogolopesAV/rty-aip-hub/plugins/rty-web-accessibility
     - diogolopesAV/rty-aip-hub/plugins/rty-terraform-azure-cdn-classic-migration
+    - diogolopesAV/rty-aip-hub/plugins/azure-skills
     - Riverty-Tech-Innovation/bip-python-skill#a54a2102db113824db71cccf1241cdae62d2ebdb
     - Riverty-Tech-Innovation/bip-terraform-skill#89fe35c95bcf9adffa1a1d03118f9cfa7285924f
