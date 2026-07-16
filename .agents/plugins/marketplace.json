@@ -1,0 +1,84 @@
+{
+  "name": "rty-hub",
+  "interface": {
+    "displayName": "rty-hub"
+  },
+  "plugins": [
+    {
+      "name": "rty-atlassian-mcp",
+      "source": {
+        "source": "local",
+        "path": "./packages/rty-atlassian-mcp"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "rty-skill-authoring",
+      "source": {
+        "source": "local",
+        "path": "./packages/rty-skill-authoring"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "rty-web-accessibility",
+      "source": {
+        "source": "local",
+        "path": "./packages/rty-web-accessibility"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "rty-terraform-azure-cdn-classic-migration",
+      "source": {
+        "source": "local",
+        "path": "./packages/rty-terraform-azure-cdn-classic-migration"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "bip-python-skill",
+      "source": {
+        "source": "url",
+        "url": "Riverty-Tech-Innovation/bip-python-skill",
+        "ref": "a54a2102db113824db71cccf1241cdae62d2ebdb",
+        "sha": "a54a2102db113824db71cccf1241cdae62d2ebdb"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "bip-terraform-skill",
+      "source": {
+        "source": "url",
+        "url": "Riverty-Tech-Innovation/bip-terraform-skill",
+        "ref": "89fe35c95bcf9adffa1a1d03118f9cfa7285924f",
+        "sha": "89fe35c95bcf9adffa1a1d03118f9cfa7285924f"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
