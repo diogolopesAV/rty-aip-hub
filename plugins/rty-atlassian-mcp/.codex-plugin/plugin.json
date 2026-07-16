@@ -1,0 +1,17 @@
+{
+  "name": "rty-atlassian-mcp",
+  "version": "1.0.0",
+  "description": "Provides agents with access to Jira and Confluence via Atlassian's official cloud MCP server",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Riverty Atlassian MCP",
+    "shortDescription": "Configure Atlassian's cloud MCP server for Jira and Confluence access.",
+    "longDescription": "Provides AI agents with access to Jira issues and Confluence pages via Atlassian's official cloud MCP server. Covers initial setup, OAuth flow, and effective usage patterns for Riverty's Atlassian environment.",
+    "developerName": "Riverty Technology Innovation",
+    "category": "Developer Tools",
+    "defaultPrompt": "Help me access Jira and Confluence with Atlassian MCP."
+  }
+}

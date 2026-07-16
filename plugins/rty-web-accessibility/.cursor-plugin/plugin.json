@@ -1,0 +1,8 @@
+{
+  "name": "rty-web-accessibility",
+  "displayName": "Riverty Web Accessibility",
+  "version": "1.0.0",
+  "description": "Ensures all generated HTML and CSS/SCSS is WCAG 2.1/2.2 Level AA compliant",
+  "license": "MIT",
+  "skills": "./skills/"
+}

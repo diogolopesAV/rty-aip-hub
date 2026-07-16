@@ -1,0 +1,16 @@
+{
+  "name": "rty-terraform-azure-cdn-classic-migration",
+  "version": "1.0.0",
+  "description": "Guides the full Azure CDN Classic to Azure Front Door migration for Terraform-managed environments",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Riverty Terraform CDN Migration",
+    "shortDescription": "Guide the Azure CDN Classic to Azure Front Door migration for Terraform environments.",
+    "longDescription": "Covers the full two-phase migration: Portal-side resource creation followed by Terraform state removal, import, plan reconciliation, and multi-environment rollout. Handles Key Vault-backed certificates, BIP module vs flat resource patterns, and known azurerm v4 provider pitfalls.",
+    "developerName": "Riverty Technology Innovation",
+    "category": "Developer Tools",
+    "defaultPrompt": "Help me migrate Azure CDN Classic to Azure Front Door in Terraform."
+  }
+}

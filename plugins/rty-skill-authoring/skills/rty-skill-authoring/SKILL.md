@@ -20,7 +20,7 @@ Create, review, and refine agent skills that follow the [agentskills.io spec](ht
 
 1. Use `rty-` as the default name prefix.
 2. The user may choose a different name freely when authoring skills in their own repository.
-3. Skills with the `rty-` prefix are eligible for contribution to `diogolopesAV/rty-aip-hub`, where they go under `packages/` at repo root.
+3. Skills with the `rty-` prefix are eligible for contribution to `diogolopesAV/rty-aip-hub`, where they go under `plugins/` at repo root.
 
 ## Core Workflow
 
@@ -30,7 +30,7 @@ Identify the boundaries of the skill:
 
 1. Define the single capability the skill provides. A skill solves one problem well.
 2. Confirm the capability is reusable beyond a single project.
-3. Decide placement based on repository conventions. Common patterns: `packages/` for shared skills in the hub, `.agents/` for internal-only skills. Check the repository root for guidance.
+3. Decide placement based on repository conventions. Common patterns: `plugins/` for shared plugins in the hub, `.agents/` for internal-only skills. Check the repository root for guidance.
 4. If the skill overlaps with an existing one, extend or refine that skill instead.
 
 ### Step 2: Create the Directory Structure
@@ -118,7 +118,7 @@ If the skill involves fragile or repetitive operations where variation is a bug,
 3. Return results via stdout as JSON when possible.
 4. Write descriptive, human-readable error messages to stderr so the agent can self-correct.
 5. Do not bundle library code. Skills reference existing tools or contain single-purpose scripts only.
-6. Keep repository tests outside distributable skill folders. In `diogolopesAV/rty-aip-hub`, do not add test files inside `packages/<skill>/`.
+6. Keep repository tests outside distributable skill folders. In `diogolopesAV/rty-aip-hub`, do not add test files inside `plugins/<plugin>/`.
 
 ### Step 7: Validate the Skill
 

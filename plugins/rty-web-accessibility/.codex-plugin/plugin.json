@@ -1,0 +1,16 @@
+{
+  "name": "rty-web-accessibility",
+  "version": "1.0.0",
+  "description": "Ensures all generated HTML and CSS/SCSS is WCAG 2.1/2.2 Level AA compliant",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Riverty Web Accessibility",
+    "shortDescription": "Ensure generated HTML/CSS is WCAG 2.1/2.2 Level AA compliant.",
+    "longDescription": "Ensures all generated HTML and CSS/SCSS meets WCAG 2.1/2.2 Level AA standards. Covers semantic structure, ARIA attributes, keyboard navigation, color contrast, and Riverty Design System component usage. Includes a contrast-ratio verification script.",
+    "developerName": "Riverty Technology Innovation",
+    "category": "Developer Tools",
+    "defaultPrompt": "Help me make this HTML component WCAG 2.1 Level AA compliant."
+  }
+}

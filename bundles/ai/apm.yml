@@ -7,5 +7,5 @@ license: MIT
 #   apm install diogolopesAV/rty-aip-hub/bundles/ai --target claude
 dependencies:
   apm:
-    - diogolopesAV/rty-aip-hub/packages/rty-atlassian-mcp
-    - diogolopesAV/rty-aip-hub/packages/rty-skill-authoring
+    - diogolopesAV/rty-aip-hub/plugins/rty-atlassian-mcp
+    - diogolopesAV/rty-aip-hub/plugins/rty-skill-authoring

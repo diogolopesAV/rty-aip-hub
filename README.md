@@ -101,17 +101,29 @@ Once set, all APM commands — `apm marketplace add`, `apm install`, bundle inst
 
 ## Contributing
 
-To add a new package, open a PR that adds a new directory under `packages/` and registers it in `apm.yml`.
+To add a new package, open a PR that adds a new directory under `plugins/` and registers it in `apm.yml`.
 
 ### Package layout
 
+Every package is a cross-platform plugin. The structure satisfies APM CLI, Claude Code, GitHub Copilot CLI, Codex CLI, and Cursor simultaneously:
+
 ```
-packages/your-package-name/
-  SKILL.md          ← required: name + description frontmatter, then skill content
-  assets/           ← templates, config files, static output (optional)
-  references/       ← schemas, API docs, cheatsheets loaded on demand (optional)
-  scripts/          ← deterministic scripts as tiny CLIs (optional)
+plugins/your-package-name/
+  .codex-plugin/
+    plugin.json     ← Codex native marketplace manifest (strict schema, see below)
+  .cursor-plugin/
+    plugin.json     ← Cursor native marketplace manifest
+  .claude-plugin/
+    plugin.json     ← Claude Code + Copilot CLI manifest (both use this path)
+  skills/
+    your-package-name/
+      SKILL.md      ← required: name + description frontmatter, then skill content
+      assets/       ← templates, config files, static output (optional)
+      references/   ← schemas, API docs, cheatsheets loaded on demand (optional)
+      scripts/      ← deterministic scripts as tiny CLIs (optional)
 ```
+
+APM detects `skills/<name>/SKILL.md` as a **Skill Collection** and installs each skill to `.agents/skills/<name>/SKILL.md` for all targets.
 
 `SKILL.md` frontmatter needs only `name` and `description`:
 
@@ -122,17 +134,40 @@ description: "One sentence. Use when X. Do not use for Y."
 ---
 ```
 
+**`.codex-plugin/plugin.json`** — strict schema (Codex validator rejects extra fields):
+
+```json
+{
+  "name": "rty-your-package-name",
+  "version": "1.0.0",
+  "description": "Same as SKILL.md description.",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Human-Readable Name",
+    "shortDescription": "One sentence.",
+    "longDescription": "Two to three sentences.",
+    "developerName": "Riverty Technology Innovation",
+    "category": "Developer Tools",
+    "defaultPrompt": "Help me … (max 128 chars)"
+  }
+}
+```
+
+**`.cursor-plugin/plugin.json`** and **`.claude-plugin/plugin.json`** — only `name` is required, add `displayName`, `version`, `description`, `license`, and `"skills": "./skills/"` for a complete listing.
+
 ### Register in `apm.yml`
 
 ```yaml
 # In marketplace.packages:
 - name: rty-your-package-name
-  source: ./packages/rty-your-package-name
+  source: ./plugins/rty-your-package-name
   description: "One sentence."
   tags: [skill, your-domain]
 
 # In dependencies.apm:
-- diogolopesAV/rty-aip-hub/packages/rty-your-package-name
+- diogolopesAV/rty-aip-hub/plugins/rty-your-package-name
 ```
 
 For packages hosted in external repos (not this repo):
@@ -158,17 +193,9 @@ For packages hosted in external repos (not this repo):
 | `python`, `terraform`, `react`, `playwright` | Technology |
 | `accessibility`, `migration`, `workflow` | Topic |
 
-### Supported package layouts
+### APM package detection
 
-APM auto-detects the package type from the repo structure:
-
-| Layout | Detected as |
-|--------|-------------|
-| `SKILL.md` at root | Skill Bundle |
-| `skills/<name>/SKILL.md` | Skill Collection |
-| `plugin.json` at root | Plugin Collection |
-| `.apm/` directory | APM Package (skills + agents + commands + hooks) |
-| `hooks/*.json` only | Hook Package |
+Hub packages use the **Skill Collection** layout (`skills/<name>/SKILL.md`). APM promotes each skill to `.agents/skills/<name>/SKILL.md` in the consuming project, and supports `apm install --skill <name>` for selective installation. The platform-specific manifests (`.codex-plugin/`, `.cursor-plugin/`, `.claude-plugin/`) are ignored by APM and consumed only by their respective native UIs.
 
 ### If the package belongs to a bundle
 
@@ -196,7 +223,7 @@ rty-aip-hub/
 ├── bundles/
 │   ├── ai/apm.yml                   # AI skills bundle
 │   └── bip/apm.yml                  # BIP team bundle
-└── packages/
+└── plugins/
     ├── rty-atlassian-mcp/           # Atlassian MCP setup skill
     ├── rty-skill-authoring/         # Skill authoring meta-skill
     ├── rty-web-accessibility/       # Web accessibility skill

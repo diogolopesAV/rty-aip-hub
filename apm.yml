@@ -22,24 +22,24 @@ marketplace:
     codex: {}
 
   packages:
-    # Riverty-owned — maintained in this repo under packages/
+    # Riverty-owned — maintained in this repo under plugins/
     - name: rty-atlassian-mcp
-      source: ./packages/rty-atlassian-mcp
+      source: ./plugins/rty-atlassian-mcp
       category: Developer Tools
       description: "Configure Atlassian's cloud MCP server for Jira and Confluence access in AI agents"
       tags: [skill, ai, confluence, jira, mcp]
     - name: rty-skill-authoring
-      source: ./packages/rty-skill-authoring
+      source: ./plugins/rty-skill-authoring
       category: Developer Tools
       description: "Create, review, and refine agent skills following Riverty conventions and the agentskills.io specification"
       tags: [skill, ai, workflow]
     - name: rty-web-accessibility
-      source: ./packages/rty-web-accessibility
+      source: ./plugins/rty-web-accessibility
       category: Developer Tools
       description: "Ensure generated HTML/CSS is WCAG 2.1/2.2 Level AA compliant using Riverty web components"
       tags: [skill, design-system, accessibility, html, css]
     - name: rty-terraform-azure-cdn-classic-migration
-      source: ./packages/rty-terraform-azure-cdn-classic-migration
+      source: ./plugins/rty-terraform-azure-cdn-classic-migration
       category: Developer Tools
       description: "Guide Azure CDN Classic to Azure Front Door migration for Terraform-managed environments"
       tags: [skill, azure, terraform, migration]
@@ -57,12 +57,12 @@ marketplace:
       description: "Terraform coding practices for maintainable, secure IaC following BIP standards"
       tags: [skill, bip, terraform, iac]
 
-# Full platform baseline: apm install diogolopesAV/rty-aip-hub installs all packages.
+# Full platform baseline: apm install diogolopesAV/rty-aip-hub installs all plugins.
 dependencies:
   apm:
-    - diogolopesAV/rty-aip-hub/packages/rty-atlassian-mcp
-    - diogolopesAV/rty-aip-hub/packages/rty-skill-authoring
-    - diogolopesAV/rty-aip-hub/packages/rty-web-accessibility
-    - diogolopesAV/rty-aip-hub/packages/rty-terraform-azure-cdn-classic-migration
+    - diogolopesAV/rty-aip-hub/plugins/rty-atlassian-mcp
+    - diogolopesAV/rty-aip-hub/plugins/rty-skill-authoring
+    - diogolopesAV/rty-aip-hub/plugins/rty-web-accessibility
+    - diogolopesAV/rty-aip-hub/plugins/rty-terraform-azure-cdn-classic-migration
     - Riverty-Tech-Innovation/bip-python-skill#a54a2102db113824db71cccf1241cdae62d2ebdb
     - Riverty-Tech-Innovation/bip-terraform-skill#89fe35c95bcf9adffa1a1d03118f9cfa7285924f

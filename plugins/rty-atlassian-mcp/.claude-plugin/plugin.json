@@ -1,0 +1,7 @@
+{
+  "name": "rty-atlassian-mcp",
+  "displayName": "Riverty Atlassian MCP",
+  "version": "1.0.0",
+  "description": "Provides agents with access to Jira and Confluence via Atlassian's official cloud MCP server",
+  "skills": "./skills/"
+}

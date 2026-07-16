@@ -1,0 +1,16 @@
+{
+  "name": "rty-skill-authoring",
+  "version": "1.0.0",
+  "description": "Creates, reviews, and refines agent skills following the agentskills.io specification and Riverty conventions",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Riverty Skill Authoring",
+    "shortDescription": "Create and refine agent skills following the agentskills.io spec and Riverty conventions.",
+    "longDescription": "Guides authors through the full skill lifecycle: scope definition, SKILL.md structure, progressive disclosure across references and assets, script bundling, and quality validation. Enforces Riverty naming conventions and hub contribution requirements.",
+    "developerName": "Riverty Technology Innovation",
+    "category": "Developer Tools",
+    "defaultPrompt": "Help me create an agent skill following Riverty conventions."
+  }
+}

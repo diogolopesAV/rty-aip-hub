@@ -15,7 +15,7 @@
         "jira",
         "mcp"
       ],
-      "source": "./packages/rty-atlassian-mcp"
+      "source": "./plugins/rty-atlassian-mcp"
     },
     {
       "name": "rty-skill-authoring",
@@ -25,7 +25,7 @@
         "ai",
         "workflow"
       ],
-      "source": "./packages/rty-skill-authoring"
+      "source": "./plugins/rty-skill-authoring"
     },
     {
       "name": "rty-web-accessibility",
@@ -37,7 +37,7 @@
         "html",
         "css"
       ],
-      "source": "./packages/rty-web-accessibility"
+      "source": "./plugins/rty-web-accessibility"
     },
     {
       "name": "rty-terraform-azure-cdn-classic-migration",
@@ -48,7 +48,7 @@
         "terraform",
         "migration"
       ],
-      "source": "./packages/rty-terraform-azure-cdn-classic-migration"
+      "source": "./plugins/rty-terraform-azure-cdn-classic-migration"
     },
     {
       "name": "bip-python-skill",
