@@ -1,7 +1,6 @@
 ---
 name: rty-validator
 description: Validates that rty-test-plugin is fully installed and all its primitives are active for the current service. Invoke when setting up or troubleshooting the plugin.
-model: inherit
 tools: Bash
 maxTurns: 5
 ---
