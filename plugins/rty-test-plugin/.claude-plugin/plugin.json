@@ -7,6 +7,5 @@
   "license": "MIT",
   "skills": "./skills/",
   "hooks": "./hooks/claude-codex.json",
-  "mcpServers": "./.mcp.json",
-  "agents": "./agents/"
+  "mcpServers": "./.mcp.json"
 }
