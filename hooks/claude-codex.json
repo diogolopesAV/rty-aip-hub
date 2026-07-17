@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo '[rty-test-plugin] Plugin active — skills, hooks, and MCP loaded.'"
+            "command": "echo '[rty-test-plugin] Session started — Claude/Codex hooks active.'"
           }
         ]
       }
@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo \"[rty-test-plugin] Bash tool called: $CLAUDE_TOOL_INPUT_COMMAND\""
+            "command": "echo '[rty-test-plugin] PreToolUse: Bash tool intercepted.'"
           }
         ]
       }
