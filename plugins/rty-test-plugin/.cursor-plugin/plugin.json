@@ -2,10 +2,12 @@
   "name": "rty-test-plugin",
   "displayName": "Riverty Test Plugin",
   "version": "1.0.0",
-  "description": "Reference plugin demonstrating all supported primitives for Cursor: skills, MCP servers, rules, and hooks.",
+  "description": "Reference plugin demonstrating all supported primitives for Cursor: skills, hooks, MCP servers, agents, and rules.",
+  "author": { "name": "Riverty Technology Innovation" },
   "license": "MIT",
   "skills": "./skills/",
+  "hooks": "./hooks/cursor.json",
   "mcpServers": "./mcp.json",
-  "rules": "./rules/",
-  "hooks": "./hooks/hooks.json"
+  "agents": "./agents/",
+  "rules": "./rules/"
 }
