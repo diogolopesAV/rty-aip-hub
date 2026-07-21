@@ -4,8 +4,9 @@ on:
   pull_request:
     paths:
       - apm.yml
-      - packages/**
+      - plugins/**
       - bundles/**
+      - scripts/gen-copilot-marketplace.py
 
 jobs:
   validate:
@@ -23,7 +24,15 @@ jobs:
           # repository secret. Falls back to GITHUB_TOKEN (sufficient for public repos only).
           GITHUB_APM_PAT: ${{ secrets.APM_PAT || secrets.GITHUB_TOKEN }}
 
-      - name: Validate central marketplace
+      - name: Validate central marketplace (Claude + Codex outputs)
         run: apm pack --dry-run --check-clean
         env:
           GITHUB_APM_PAT: ${{ secrets.APM_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Validate marketplace catalogs (Copilot CLI + Cursor)
+        # Checks that both marketplace.json files match what the script would generate.
+        # Fails with a diff if either committed file is out of date.
+        run: |
+          pip install pyyaml --quiet
+          python scripts/gen-copilot-marketplace.py --check
+          python scripts/gen-copilot-marketplace.py --format cursor --check

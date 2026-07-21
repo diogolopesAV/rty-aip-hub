@@ -4,5 +4,6 @@
   "version": "1.0.0",
   "description": "Provides agents with access to Jira and Confluence via Atlassian's official cloud MCP server",
   "license": "MIT",
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
 }

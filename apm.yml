@@ -43,9 +43,11 @@ marketplace:
       category: Developer Tools
       description: "Guide Azure CDN Classic to Azure Front Door migration for Terraform-managed environments"
       tags: [skill, azure, terraform, migration]
-    # External plugin (git submodule strategy) — pointer to external repo, populated locally on checkout
+    # External plugin — referenced directly from its own repo.
+    # To update: find the new commit SHA with: git ls-remote https://github.com/diogolopesAV/rty-test-plugin.git main
     - name: rty-test-plugin
-      source: ./plugins/rty-test-plugin
+      source: diogolopesAV/rty-test-plugin
+      ref: 3f21137f7f1f842878c9e3ce25ba15ef99d9edc7
       category: Developer Tools
       description: "Reference plugin demonstrating all supported plugin primitives (skills, hooks, MCP, rules)"
       tags: [skill, test, hooks, mcp]
@@ -70,6 +72,6 @@ dependencies:
     - diogolopesAV/rty-aip-hub/plugins/rty-skill-authoring
     - diogolopesAV/rty-aip-hub/plugins/rty-web-accessibility
     - diogolopesAV/rty-aip-hub/plugins/rty-terraform-azure-cdn-classic-migration
-    - diogolopesAV/rty-aip-hub/plugins/rty-test-plugin
+    - diogolopesAV/rty-test-plugin#3f21137f7f1f842878c9e3ce25ba15ef99d9edc7
     - Riverty-Tech-Innovation/bip-python-skill#a54a2102db113824db71cccf1241cdae62d2ebdb
     - Riverty-Tech-Innovation/bip-terraform-skill#89fe35c95bcf9adffa1a1d03118f9cfa7285924f
