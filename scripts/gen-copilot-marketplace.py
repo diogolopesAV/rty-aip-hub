@@ -60,7 +60,7 @@ def is_local_source(source: str) -> bool:
     return source.startswith("./") or source.startswith("/")
 
 
-def build_plugin_entry(pkg: dict) -> dict:
+def build_plugin_entry(pkg: dict, fmt: str = "copilot") -> dict:
     """
     Translate one apm.yml marketplace package into a catalog entry.
 
@@ -89,9 +89,17 @@ def build_plugin_entry(pkg: dict) -> dict:
         }
         ref = pkg.get("ref")
         if ref:
-            src_obj["ref"] = str(ref)
-        # sha is a separate hint when available (e.g. after apm pack resolves it).
-        # We intentionally omit it here: the ref (tag or SHA) is the primary selector.
+            ref_str = str(ref)
+            # Copilot CLI convention (confirmed from github/awesome-copilot):
+            #   - named refs (tags, branches) → "ref" field
+            #   - commit SHAs               → "sha" field (dedicated, not inside "ref")
+            # Cursor convention (confirmed by Cursor team): only "ref" field documented.
+            #   We keep SHA in "ref" for Cursor until Cursor explicitly documents "sha".
+            is_sha = len(ref_str) == 40 and all(c in "0123456789abcdef" for c in ref_str)
+            if is_sha and fmt == "copilot":
+                src_obj["sha"] = ref_str
+            else:
+                src_obj["ref"] = ref_str
         entry["source"] = src_obj
 
     # Optional metadata — remap apm.yml field names to Copilot field names
@@ -112,7 +120,7 @@ def build_plugin_entry(pkg: dict) -> dict:
     return entry
 
 
-def build_catalog(config: dict) -> dict:
+def build_catalog(config: dict, fmt: str = "copilot") -> dict:
     """Build the full marketplace catalog dict (format-agnostic)."""
     mp = config.get("marketplace", {})
     if not mp:
@@ -140,7 +148,7 @@ def build_catalog(config: dict) -> dict:
     if metadata:
         catalog["metadata"] = metadata
     catalog["owner"] = owner
-    catalog["plugins"] = [build_plugin_entry(p) for p in packages]
+    catalog["plugins"] = [build_plugin_entry(p, fmt) for p in packages]
 
     return catalog
 
@@ -179,8 +187,8 @@ def validate_catalog(catalog: dict) -> list[str]:
                 errors.append(f"{prefix}: external source type must be 'github', got {source.get('source')!r}")
             if not source.get("repo"):
                 errors.append(f"{prefix}: external source missing 'repo'")
-            if not source.get("ref"):
-                errors.append(f"{prefix}: external source has no 'ref' — plugin will resolve to HEAD, which is mutable")
+            if not source.get("ref") and not source.get("sha"):
+                errors.append(f"{prefix}: external source has no 'ref' or 'sha' — plugin will resolve to HEAD, which is mutable")
         elif isinstance(source, str):
             if os.path.isdir(".git"):  # Only validate paths when at repo root
                 full_path = os.path.join(os.getcwd(), source)
@@ -222,7 +230,7 @@ def main() -> None:
         sys.exit(1)
 
     config = load_apm_yml()
-    catalog = build_catalog(config)
+    catalog = build_catalog(config, args.format)
 
     # Validate structure
     errors = validate_catalog(catalog)

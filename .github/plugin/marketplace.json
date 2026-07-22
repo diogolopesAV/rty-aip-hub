@@ -62,7 +62,7 @@
       "source": {
         "source": "github",
         "repo": "diogolopesAV/rty-test-plugin",
-        "ref": "3f21137f7f1f842878c9e3ce25ba15ef99d9edc7"
+        "sha": "93826905c974d0ea45f938d500e8a1994630048f"
       },
       "description": "Reference plugin demonstrating all supported plugin primitives (skills, hooks, MCP, rules)",
       "category": "Developer Tools",
@@ -78,7 +78,7 @@
       "source": {
         "source": "github",
         "repo": "Riverty-Tech-Innovation/bip-python-skill",
-        "ref": "a54a2102db113824db71cccf1241cdae62d2ebdb"
+        "sha": "a54a2102db113824db71cccf1241cdae62d2ebdb"
       },
       "description": "Python coding practices for maintainable, secure, and scalable code following BIP standards",
       "category": "Developer Tools",
@@ -93,7 +93,7 @@
       "source": {
         "source": "github",
         "repo": "Riverty-Tech-Innovation/bip-terraform-skill",
-        "ref": "89fe35c95bcf9adffa1a1d03118f9cfa7285924f"
+        "sha": "89fe35c95bcf9adffa1a1d03118f9cfa7285924f"
       },
       "description": "Terraform coding practices for maintainable, secure IaC following BIP standards",
       "category": "Developer Tools",

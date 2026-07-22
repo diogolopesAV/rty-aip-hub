@@ -62,7 +62,7 @@
       "source": {
         "source": "github",
         "repo": "diogolopesAV/rty-test-plugin",
-        "ref": "3f21137f7f1f842878c9e3ce25ba15ef99d9edc7"
+        "ref": "93826905c974d0ea45f938d500e8a1994630048f"
       },
       "description": "Reference plugin demonstrating all supported plugin primitives (skills, hooks, MCP, rules)",
       "category": "Developer Tools",

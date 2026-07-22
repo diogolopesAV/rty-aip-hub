@@ -47,7 +47,7 @@ marketplace:
     # To update: find the new commit SHA with: git ls-remote https://github.com/diogolopesAV/rty-test-plugin.git main
     - name: rty-test-plugin
       source: diogolopesAV/rty-test-plugin
-      ref: 3f21137f7f1f842878c9e3ce25ba15ef99d9edc7
+      ref: 93826905c974d0ea45f938d500e8a1994630048f
       category: Developer Tools
       description: "Reference plugin demonstrating all supported plugin primitives (skills, hooks, MCP, rules)"
       tags: [skill, test, hooks, mcp]
@@ -72,6 +72,6 @@ dependencies:
     - diogolopesAV/rty-aip-hub/plugins/rty-skill-authoring
     - diogolopesAV/rty-aip-hub/plugins/rty-web-accessibility
     - diogolopesAV/rty-aip-hub/plugins/rty-terraform-azure-cdn-classic-migration
-    - diogolopesAV/rty-test-plugin#3f21137f7f1f842878c9e3ce25ba15ef99d9edc7
+    - diogolopesAV/rty-test-plugin#93826905c974d0ea45f938d500e8a1994630048f
     - Riverty-Tech-Innovation/bip-python-skill#a54a2102db113824db71cccf1241cdae62d2ebdb
     - Riverty-Tech-Innovation/bip-terraform-skill#89fe35c95bcf9adffa1a1d03118f9cfa7285924f
