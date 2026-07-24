@@ -1,0 +1,11 @@
+name: rty-hub-sample-core
+version: 1.0.0
+description: "Sample core bundle — the two simplest fixture plugins (skills-only and hooks)"
+license: MIT
+# Fixture bundle for validating GET /api/plugins/bundles and the bundles UI.
+# Install all core sample packages at once:
+#   apm install diogolopesAV/rty-aip-hub/bundles/sample-core --target claude
+dependencies:
+  apm:
+    - diogolopesAV/rty-aip-hub/plugins/rty-sample-skills-only
+    - diogolopesAV/rty-aip-hub/plugins/rty-sample-hooks

@@ -1,0 +1,16 @@
+{
+  "name": "rty-sample-governed",
+  "version": "1.0.0",
+  "description": "Sample plugin with a multi-file skill, for Codex CLI.",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Riverty Sample: Governed",
+    "shortDescription": "Marketplace fixture pairing a multi-file skill with Cursor rules.",
+    "longDescription": "Demonstrates a plugin whose skill folder contains supporting references/assets alongside SKILL.md, plus a Cursor-only rule. Used to validate multi-file skill fetch/edit and the rules primitive.",
+    "developerName": "Riverty Technology Innovation",
+    "category": "Developer Tools",
+    "defaultPrompt": "Run the rty-sample-governed checklist."
+  }
+}

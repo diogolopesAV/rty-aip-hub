@@ -1,0 +1,10 @@
+{
+  "name": "rty-sample-governed",
+  "displayName": "Riverty Sample: Governed",
+  "version": "1.0.0",
+  "description": "Sample plugin with a multi-file skill plus rules, for Cursor.",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "rules": "./rules/"
+}

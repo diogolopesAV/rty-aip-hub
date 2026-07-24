@@ -1,0 +1,9 @@
+{
+  "name": "rty-sample-skills-only",
+  "displayName": "Riverty Sample: Skills Only",
+  "version": "1.0.0",
+  "description": "Sample plugin with a single skill and no other primitives, for Cursor.",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "rty-sample-hooks",
+  "displayName": "Riverty Sample: Hooks",
+  "version": "1.0.0",
+  "description": "Sample plugin with a skill plus lifecycle hooks, for Cursor.",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "hooks": "./hooks/cursor.json"
+}

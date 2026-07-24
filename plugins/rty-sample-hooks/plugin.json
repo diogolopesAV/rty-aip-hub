@@ -1,0 +1,9 @@
+{
+  "name": "rty-sample-hooks",
+  "description": "Sample plugin with a skill plus lifecycle hooks — validates the marketplace's hooks primitive detection and install path.",
+  "version": "1.0.0",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "hooks": "hooks/copilot.json"
+}

@@ -22,27 +22,29 @@ marketplace:
     codex: {}
 
   packages:
-    # Riverty-owned — maintained in this repo under plugins/
-    - name: rty-atlassian-mcp
-      source: ./plugins/rty-atlassian-mcp
+    # Sample/fixture plugins — maintained in this repo under plugins/.
+    # Each isolates a different primitive combination to exercise the full
+    # marketplace catalog + install surface.
+    - name: rty-sample-skills-only
+      source: ./plugins/rty-sample-skills-only
       category: Developer Tools
-      description: "Configure Atlassian's cloud MCP server for Jira and Confluence access in AI agents"
-      tags: [skill, ai, confluence, jira, mcp]
-    - name: rty-skill-authoring
-      source: ./plugins/rty-skill-authoring
+      description: "Sample plugin with a single skill and no other primitives"
+      tags: [skill, sample]
+    - name: rty-sample-hooks
+      source: ./plugins/rty-sample-hooks
       category: Developer Tools
-      description: "Create, review, and refine agent skills following Riverty conventions and the agentskills.io specification"
-      tags: [skill, ai, workflow]
-    - name: rty-web-accessibility
-      source: ./plugins/rty-web-accessibility
+      description: "Sample plugin with a skill plus lifecycle hooks"
+      tags: [skill, hook, sample]
+    - name: rty-sample-integration
+      source: ./plugins/rty-sample-integration
       category: Developer Tools
-      description: "Ensure generated HTML/CSS is WCAG 2.1/2.2 Level AA compliant using Riverty web components"
-      tags: [skill, design-system, accessibility, html, css]
-    - name: rty-terraform-azure-cdn-classic-migration
-      source: ./plugins/rty-terraform-azure-cdn-classic-migration
+      description: "Sample plugin with a skill, an MCP server, and an agent"
+      tags: [skill, mcp, agent, sample]
+    - name: rty-sample-governed
+      source: ./plugins/rty-sample-governed
       category: Developer Tools
-      description: "Guide Azure CDN Classic to Azure Front Door migration for Terraform-managed environments"
-      tags: [skill, azure, terraform, migration]
+      description: "Sample plugin with a multi-file skill plus Cursor rules"
+      tags: [skill, rules, sample]
     # External plugin — referenced directly from its own repo.
     # To update: find the new commit SHA with: git ls-remote https://github.com/diogolopesAV/rty-test-plugin.git main
     - name: rty-test-plugin
@@ -51,27 +53,12 @@ marketplace:
       category: Developer Tools
       description: "Reference plugin demonstrating all supported plugin primitives (skills, hooks, MCP, rules)"
       tags: [skill, test, hooks, mcp]
-    # External skill-only repos — APM-native refs (no platform manifests; private: requires GITHUB_APM_PAT)
-    - name: bip-python-skill
-      source: Riverty-Tech-Innovation/bip-python-skill
-      ref: a54a2102db113824db71cccf1241cdae62d2ebdb
-      category: Developer Tools
-      description: "Python coding practices for maintainable, secure, and scalable code following BIP standards"
-      tags: [skill, bip, python]
-    - name: bip-terraform-skill
-      source: Riverty-Tech-Innovation/bip-terraform-skill
-      ref: 89fe35c95bcf9adffa1a1d03118f9cfa7285924f
-      category: Developer Tools
-      description: "Terraform coding practices for maintainable, secure IaC following BIP standards"
-      tags: [skill, bip, terraform, iac]
 
 # Full platform baseline: apm install diogolopesAV/rty-aip-hub installs all plugins.
 dependencies:
   apm:
-    - diogolopesAV/rty-aip-hub/plugins/rty-atlassian-mcp
-    - diogolopesAV/rty-aip-hub/plugins/rty-skill-authoring
-    - diogolopesAV/rty-aip-hub/plugins/rty-web-accessibility
-    - diogolopesAV/rty-aip-hub/plugins/rty-terraform-azure-cdn-classic-migration
+    - diogolopesAV/rty-aip-hub/plugins/rty-sample-skills-only
+    - diogolopesAV/rty-aip-hub/plugins/rty-sample-hooks
+    - diogolopesAV/rty-aip-hub/plugins/rty-sample-integration
+    - diogolopesAV/rty-aip-hub/plugins/rty-sample-governed
     - diogolopesAV/rty-test-plugin#93826905c974d0ea45f938d500e8a1994630048f
-    - Riverty-Tech-Innovation/bip-python-skill#a54a2102db113824db71cccf1241cdae62d2ebdb
-    - Riverty-Tech-Innovation/bip-terraform-skill#89fe35c95bcf9adffa1a1d03118f9cfa7285924f

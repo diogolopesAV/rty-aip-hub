@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "echo '[rty-sample-hooks] Session started — Cursor hooks active.'"
+      }
+    ],
+    "preToolUse": [
+      {
+        "command": "echo '[rty-sample-hooks] PreToolUse: tool intercepted.'"
+      }
+    ]
+  }
+}

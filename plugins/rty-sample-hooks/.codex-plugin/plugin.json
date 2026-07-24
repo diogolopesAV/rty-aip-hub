@@ -1,0 +1,17 @@
+{
+  "name": "rty-sample-hooks",
+  "version": "1.0.0",
+  "description": "Sample plugin with a skill plus lifecycle hooks, for Codex CLI.",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "hooks": "./hooks/claude-codex.json",
+  "interface": {
+    "displayName": "Riverty Sample: Hooks",
+    "shortDescription": "Marketplace fixture pairing a skill with session/tool hooks.",
+    "longDescription": "Demonstrates a plugin that bundles a skill with lifecycle hooks (session start, pre-tool-use). Used to validate the marketplace's hooks primitive detection and probing.",
+    "developerName": "Riverty Technology Innovation",
+    "category": "Developer Tools",
+    "defaultPrompt": "Run the rty-sample-hooks checklist."
+  }
+}

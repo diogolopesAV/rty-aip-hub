@@ -1,7 +1,0 @@
-{
-  "name": "rty-terraform-azure-cdn-classic-migration",
-  "displayName": "Riverty Terraform CDN Migration",
-  "version": "1.0.0",
-  "description": "Guides the full Azure CDN Classic to Azure Front Door migration for Terraform-managed environments",
-  "skills": "./skills/"
-}

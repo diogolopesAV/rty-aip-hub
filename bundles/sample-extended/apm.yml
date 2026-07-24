@@ -1,0 +1,11 @@
+name: rty-hub-sample-extended
+version: 1.0.0
+description: "Sample extended bundle — the richer fixture plugins (MCP+agents and rules)"
+license: MIT
+# Fixture bundle for validating GET /api/plugins/bundles and the bundles UI.
+# Install all extended sample packages at once:
+#   apm install diogolopesAV/rty-aip-hub/bundles/sample-extended --target claude
+dependencies:
+  apm:
+    - diogolopesAV/rty-aip-hub/plugins/rty-sample-integration
+    - diogolopesAV/rty-aip-hub/plugins/rty-sample-governed

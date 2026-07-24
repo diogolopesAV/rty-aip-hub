@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "command": "echo '[rty-sample-hooks] Session started — Copilot hooks active.'",
+        "timeoutSec": 10
+      }
+    ],
+    "preToolUse": [
+      {
+        "type": "command",
+        "matcher": "bash",
+        "command": "echo '[rty-sample-hooks] PreToolUse: bash intercepted.'",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "rty-sample-skills-only",
+  "version": "1.0.0",
+  "description": "Sample plugin with a single skill and no other primitives, for Codex CLI.",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Riverty Sample: Skills Only",
+    "shortDescription": "Minimal marketplace fixture with a single skill.",
+    "longDescription": "Demonstrates the smallest possible plugin: one skill, no hooks, MCP servers, agents, or rules. Used to validate the marketplace's skills-only catalog path.",
+    "developerName": "Riverty Technology Innovation",
+    "category": "Developer Tools",
+    "defaultPrompt": "Run the rty-sample-skills-only checklist."
+  }
+}

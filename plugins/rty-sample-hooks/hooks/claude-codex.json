@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[rty-sample-hooks] Session started — Claude/Codex hooks active.'"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[rty-sample-hooks] PreToolUse: Bash tool intercepted.'"
+          }
+        ]
+      }
+    ]
+  }
+}

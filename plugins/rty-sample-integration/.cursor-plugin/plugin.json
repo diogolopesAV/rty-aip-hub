@@ -1,0 +1,11 @@
+{
+  "name": "rty-sample-integration",
+  "displayName": "Riverty Sample: Integration",
+  "version": "1.0.0",
+  "description": "Sample plugin with a skill, an MCP server, and an agent, for Cursor.",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "agents": "./agents/"
+}

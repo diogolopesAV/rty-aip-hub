@@ -1,0 +1,10 @@
+{
+  "name": "rty-sample-integration",
+  "description": "Sample plugin with a skill, an MCP server, and an agent — validates the marketplace's MCP and agents primitive detection and install path.",
+  "version": "1.0.0",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "mcpServers": ".mcp.json",
+  "agents": "copilot-agents/"
+}

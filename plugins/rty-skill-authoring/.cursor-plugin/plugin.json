@@ -1,8 +1,0 @@
-{
-  "name": "rty-skill-authoring",
-  "displayName": "Riverty Skill Authoring",
-  "version": "1.0.0",
-  "description": "Creates, reviews, and refines agent skills following the agentskills.io specification and Riverty conventions",
-  "license": "MIT",
-  "skills": "./skills/"
-}

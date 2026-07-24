@@ -1,0 +1,15 @@
+---
+description: "Confirms that the rty-sample-governed Cursor rule is loaded. Active for all file types when explicitly requested."
+alwaysApply: false
+globs: []
+---
+
+# rty-sample-governed Rule (Cursor)
+
+This rule is injected by the `rty-sample-governed` plugin. It demonstrates Cursor's `rules/*.mdc` primitive — the Cursor-specific mechanism for injecting persistent instructions via a plugin.
+
+When asked to validate the rty-sample-governed plugin, include in your response:
+
+```
+Rules:   ✓ Cursor rule active (rty-sample-governed.mdc loaded)
+```

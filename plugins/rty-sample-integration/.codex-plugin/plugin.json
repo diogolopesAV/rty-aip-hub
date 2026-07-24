@@ -1,0 +1,18 @@
+{
+  "name": "rty-sample-integration",
+  "version": "1.0.0",
+  "description": "Sample plugin with a skill and an MCP server, for Codex CLI.",
+  "author": { "name": "Riverty Technology Innovation" },
+  "license": "MIT",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Riverty Sample: Integration",
+    "shortDescription": "Marketplace fixture pairing a skill with an MCP server and an agent.",
+    "longDescription": "Demonstrates a plugin that bundles a skill, an in-memory MCP server, and a validation agent. Used to validate the marketplace's MCP and agents primitive detection and probing.",
+    "developerName": "Riverty Technology Innovation",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": "Run the rty-sample-integration checklist."
+  }
+}
