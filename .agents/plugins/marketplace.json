@@ -5,10 +5,10 @@
   },
   "plugins": [
     {
-      "name": "rty-atlassian-mcp",
+      "name": "rty-sample-skills-only",
       "source": {
         "source": "local",
-        "path": "./plugins/rty-atlassian-mcp"
+        "path": "./plugins/rty-sample-skills-only"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -17,10 +17,10 @@
       "category": "Developer Tools"
     },
     {
-      "name": "rty-skill-authoring",
+      "name": "rty-sample-hooks",
       "source": {
         "source": "local",
-        "path": "./plugins/rty-skill-authoring"
+        "path": "./plugins/rty-sample-hooks"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -29,10 +29,10 @@
       "category": "Developer Tools"
     },
     {
-      "name": "rty-web-accessibility",
+      "name": "rty-sample-integration",
       "source": {
         "source": "local",
-        "path": "./plugins/rty-web-accessibility"
+        "path": "./plugins/rty-sample-integration"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -41,10 +41,10 @@
       "category": "Developer Tools"
     },
     {
-      "name": "rty-terraform-azure-cdn-classic-migration",
+      "name": "rty-sample-governed",
       "source": {
         "source": "local",
-        "path": "./plugins/rty-terraform-azure-cdn-classic-migration"
+        "path": "./plugins/rty-sample-governed"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -59,34 +59,6 @@
         "url": "diogolopesAV/rty-test-plugin",
         "ref": "93826905c974d0ea45f938d500e8a1994630048f",
         "sha": "93826905c974d0ea45f938d500e8a1994630048f"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Developer Tools"
-    },
-    {
-      "name": "bip-python-skill",
-      "source": {
-        "source": "url",
-        "url": "Riverty-Tech-Innovation/bip-python-skill",
-        "ref": "a54a2102db113824db71cccf1241cdae62d2ebdb",
-        "sha": "a54a2102db113824db71cccf1241cdae62d2ebdb"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Developer Tools"
-    },
-    {
-      "name": "bip-terraform-skill",
-      "source": {
-        "source": "url",
-        "url": "Riverty-Tech-Innovation/bip-terraform-skill",
-        "ref": "89fe35c95bcf9adffa1a1d03118f9cfa7285924f",
-        "sha": "89fe35c95bcf9adffa1a1d03118f9cfa7285924f"
       },
       "policy": {
         "installation": "AVAILABLE",

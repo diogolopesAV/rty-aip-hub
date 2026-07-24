@@ -6,49 +6,44 @@
   },
   "plugins": [
     {
-      "name": "rty-atlassian-mcp",
-      "description": "Configure Atlassian's cloud MCP server for Jira and Confluence access in AI agents",
+      "name": "rty-sample-skills-only",
+      "description": "Sample plugin with a single skill and no other primitives",
       "tags": [
         "skill",
-        "ai",
-        "confluence",
-        "jira",
-        "mcp"
+        "sample"
       ],
-      "source": "./plugins/rty-atlassian-mcp"
+      "source": "./plugins/rty-sample-skills-only"
     },
     {
-      "name": "rty-skill-authoring",
-      "description": "Create, review, and refine agent skills following Riverty conventions and the agentskills.io specification",
+      "name": "rty-sample-hooks",
+      "description": "Sample plugin with a skill plus lifecycle hooks",
       "tags": [
         "skill",
-        "ai",
-        "workflow"
+        "hook",
+        "sample"
       ],
-      "source": "./plugins/rty-skill-authoring"
+      "source": "./plugins/rty-sample-hooks"
     },
     {
-      "name": "rty-web-accessibility",
-      "description": "Ensure generated HTML/CSS is WCAG 2.1/2.2 Level AA compliant using Riverty web components",
+      "name": "rty-sample-integration",
+      "description": "Sample plugin with a skill, an MCP server, and an agent",
       "tags": [
         "skill",
-        "design-system",
-        "accessibility",
-        "html",
-        "css"
+        "mcp",
+        "agent",
+        "sample"
       ],
-      "source": "./plugins/rty-web-accessibility"
+      "source": "./plugins/rty-sample-integration"
     },
     {
-      "name": "rty-terraform-azure-cdn-classic-migration",
-      "description": "Guide Azure CDN Classic to Azure Front Door migration for Terraform-managed environments",
+      "name": "rty-sample-governed",
+      "description": "Sample plugin with a multi-file skill plus Cursor rules",
       "tags": [
         "skill",
-        "azure",
-        "terraform",
-        "migration"
+        "rules",
+        "sample"
       ],
-      "source": "./plugins/rty-terraform-azure-cdn-classic-migration"
+      "source": "./plugins/rty-sample-governed"
     },
     {
       "name": "rty-test-plugin",
@@ -64,37 +59,6 @@
         "repo": "diogolopesAV/rty-test-plugin",
         "ref": "93826905c974d0ea45f938d500e8a1994630048f",
         "sha": "93826905c974d0ea45f938d500e8a1994630048f"
-      }
-    },
-    {
-      "name": "bip-python-skill",
-      "description": "Python coding practices for maintainable, secure, and scalable code following BIP standards",
-      "tags": [
-        "skill",
-        "bip",
-        "python"
-      ],
-      "source": {
-        "source": "github",
-        "repo": "Riverty-Tech-Innovation/bip-python-skill",
-        "ref": "a54a2102db113824db71cccf1241cdae62d2ebdb",
-        "sha": "a54a2102db113824db71cccf1241cdae62d2ebdb"
-      }
-    },
-    {
-      "name": "bip-terraform-skill",
-      "description": "Terraform coding practices for maintainable, secure IaC following BIP standards",
-      "tags": [
-        "skill",
-        "bip",
-        "terraform",
-        "iac"
-      ],
-      "source": {
-        "source": "github",
-        "repo": "Riverty-Tech-Innovation/bip-terraform-skill",
-        "ref": "89fe35c95bcf9adffa1a1d03118f9cfa7285924f",
-        "sha": "89fe35c95bcf9adffa1a1d03118f9cfa7285924f"
       }
     }
   ]
