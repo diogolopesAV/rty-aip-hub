@@ -45,6 +45,11 @@ marketplace:
       category: Developer Tools
       description: "Sample plugin with a multi-file skill plus Cursor rules"
       tags: [skill, rules, sample]
+    - name: rty-devops-toolkit
+      source: ./plugins/rty-devops-toolkit
+      category: Developer Tools
+      description: "DevOps automation toolkit — deploy workflows, database migrations, secrets scanning, infrastructure auditing, and incident response"
+      tags: [devops, deploy, database, security, incident-response, infrastructure]
     # External plugin — referenced directly from its own repo.
     # To update: find the new commit SHA with: git ls-remote https://github.com/diogolopesAV/rty-test-plugin.git main
     - name: rty-test-plugin
@@ -67,5 +72,6 @@ dependencies:
     - diogolopesAV/rty-aip-hub/plugins/rty-sample-hooks
     - diogolopesAV/rty-aip-hub/plugins/rty-sample-integration
     - diogolopesAV/rty-aip-hub/plugins/rty-sample-governed
+    - diogolopesAV/rty-aip-hub/plugins/rty-devops-toolkit
     - diogolopesAV/rty-test-plugin#93826905c974d0ea45f938d500e8a1994630048f
     - RebirthUO/plugin/plugins/modernuo#4d471624f81e9b6bcb33809b2dd7dda940e959c2
