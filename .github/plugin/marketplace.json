@@ -67,6 +67,21 @@
         "hooks",
         "mcp"
       ]
+    },
+    {
+      "name": "modernuo-plugin",
+      "source": {
+        "source": "github",
+        "repo": "RebirthUO/plugin",
+        "path": "plugins/modernuo",
+        "sha": "4d471624f81e9b6bcb33809b2dd7dda940e959c2"
+      },
+      "description": "ModernUO plugin fetched from a remote repository's subdirectory",
+      "category": "Developer Tools",
+      "keywords": [
+        "modernuo",
+        "plugin"
+      ]
     }
   ]
 }

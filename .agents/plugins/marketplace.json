@@ -65,6 +65,21 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Developer Tools"
+    },
+    {
+      "name": "modernuo-plugin",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/RebirthUO/plugin",
+        "path": "plugins/modernuo",
+        "ref": "4d471624f81e9b6bcb33809b2dd7dda940e959c2",
+        "sha": "4d471624f81e9b6bcb33809b2dd7dda940e959c2"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
     }
   ]
 }
