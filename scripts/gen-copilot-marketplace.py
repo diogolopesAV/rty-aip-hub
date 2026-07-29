@@ -87,6 +87,11 @@ def build_plugin_entry(pkg: dict, fmt: str = "copilot") -> dict:
             "source": "github",
             "repo": source_val,
         }
+        # Preserve subdirectory path so APM resolves to the correct subtree.
+        # APM's resolver (_resolve_github_source) reads 'path' on github sources.
+        subdir = pkg.get("subdir")
+        if subdir:
+            src_obj["path"] = str(subdir).strip("/")
         ref = pkg.get("ref")
         if ref:
             ref_str = str(ref)
@@ -183,10 +188,14 @@ def validate_catalog(catalog: dict) -> list[str]:
         if source is None:
             errors.append(f"{prefix}: 'source' is missing")
         elif isinstance(source, dict):
-            if source.get("source") != "github":
-                errors.append(f"{prefix}: external source type must be 'github', got {source.get('source')!r}")
-            if not source.get("repo"):
-                errors.append(f"{prefix}: external source missing 'repo'")
+            _VALID_EXTERNAL_SOURCE_TYPES = {"github", "url", "git-subdir"}
+            if source.get("source") not in _VALID_EXTERNAL_SOURCE_TYPES:
+                errors.append(
+                    f"{prefix}: external source type must be one of "
+                    f"{sorted(_VALID_EXTERNAL_SOURCE_TYPES)}, got {source.get('source')!r}"
+                )
+            if source.get("source") == "github" and not source.get("repo"):
+                errors.append(f"{prefix}: 'github' source missing 'repo'")
             if not source.get("ref") and not source.get("sha"):
                 errors.append(f"{prefix}: external source has no 'ref' or 'sha' — plugin will resolve to HEAD, which is mutable")
         elif isinstance(source, str):

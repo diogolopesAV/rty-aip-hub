@@ -1,9 +1,12 @@
 {
   "name": "rty-sample-governed",
   "version": "1.0.0",
-  "description": "Sample plugin with a multi-file skill, for Codex CLI.",
+  "description": "Sample plugin with a multi-file skill plus Cursor rules — validates the marketplace's rules primitive detection and multi-file skill editing.",
   "author": { "name": "Riverty Technology Innovation" },
+  "homepage": "https://github.com/diogolopesAV/rty-aip-hub",
+  "repository": "https://github.com/diogolopesAV/rty-aip-hub",
   "license": "MIT",
+  "keywords": ["skill", "rules", "sample"],
   "skills": "./skills/",
   "interface": {
     "displayName": "Riverty Sample: Governed",

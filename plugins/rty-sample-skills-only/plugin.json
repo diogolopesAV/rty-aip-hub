@@ -1,8 +1,12 @@
 {
   "name": "rty-sample-skills-only",
-  "description": "Sample plugin with a single skill and no other primitives — the minimal fixture for the plugin marketplace.",
   "version": "1.0.0",
-  "author": { "name": "Riverty Technology Innovation" },
+  "description": "Sample plugin with a single skill and no other primitives — the minimal fixture for the plugin marketplace.",
+  "author": { "name": "Riverty Technology Innovation", "url": "https://github.com/Riverty-Tech-Innovation" },
+  "homepage": "https://github.com/diogolopesAV/rty-aip-hub",
+  "repository": "https://github.com/diogolopesAV/rty-aip-hub",
   "license": "MIT",
+  "keywords": ["skill", "sample"],
+  "category": "Developer Tools",
   "skills": "./skills/"
 }

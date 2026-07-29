@@ -18,6 +18,7 @@ jobs:
       - uses: microsoft/apm-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          apm-version: '0.26.0'
         env:
           # For private dependency repos (bip-python-skill, bip-terraform-skill):
           # store a PAT with contents:read on Riverty-Tech-Innovation as the APM_PAT
@@ -25,7 +26,12 @@ jobs:
           GITHUB_APM_PAT: ${{ secrets.APM_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Validate central marketplace (Claude + Codex outputs)
-        run: apm pack --dry-run --check-clean
+        # --dry-run validates apm.yml resolution without writing files.
+        # --check-clean is intentionally omitted: pack.yml post-processes
+        # .claude-plugin/marketplace.json to expand GitHub shorthand URLs
+        # (owner/repo → https://github.com/owner/repo) so the committed file
+        # will always differ from raw apm pack output by design.
+        run: apm pack --dry-run
         env:
           GITHUB_APM_PAT: ${{ secrets.APM_PAT || secrets.GITHUB_TOKEN }}
 
@@ -36,3 +42,8 @@ jobs:
           pip install pyyaml --quiet
           python scripts/gen-copilot-marketplace.py --check
           python scripts/gen-copilot-marketplace.py --format cursor --check
+
+      - name: Validate Claude + Codex URL normalization
+        # Checks that .claude-plugin/marketplace.json and .agents/plugins/marketplace.json
+        # have been normalized (no GitHub shorthand URLs in git-subdir.url fields).
+        run: python scripts/normalize-marketplace-urls.py --check

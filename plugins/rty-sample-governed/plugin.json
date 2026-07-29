@@ -1,8 +1,12 @@
 {
   "name": "rty-sample-governed",
-  "description": "Sample plugin with a multi-file skill plus Cursor rules — validates the marketplace's rules primitive detection and multi-file skill editing.",
   "version": "1.0.0",
-  "author": { "name": "Riverty Technology Innovation" },
+  "description": "Sample plugin with a multi-file skill plus Cursor rules — validates the marketplace's rules primitive detection and multi-file skill editing.",
+  "author": { "name": "Riverty Technology Innovation", "url": "https://github.com/Riverty-Tech-Innovation" },
+  "homepage": "https://github.com/diogolopesAV/rty-aip-hub",
+  "repository": "https://github.com/diogolopesAV/rty-aip-hub",
   "license": "MIT",
+  "keywords": ["skill", "rules", "sample"],
+  "category": "Developer Tools",
   "skills": "./skills/"
 }

@@ -1,9 +1,12 @@
 {
   "name": "rty-sample-hooks",
   "version": "1.0.0",
-  "description": "Sample plugin with a skill plus lifecycle hooks, for Codex CLI.",
+  "description": "Sample plugin with a skill plus lifecycle hooks — validates the marketplace's hooks primitive detection and install path.",
   "author": { "name": "Riverty Technology Innovation" },
+  "homepage": "https://github.com/diogolopesAV/rty-aip-hub",
+  "repository": "https://github.com/diogolopesAV/rty-aip-hub",
   "license": "MIT",
+  "keywords": ["skill", "hook", "sample"],
   "skills": "./skills/",
   "hooks": "./hooks/claude-codex.json",
   "interface": {

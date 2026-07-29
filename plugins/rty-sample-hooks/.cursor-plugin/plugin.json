@@ -2,9 +2,13 @@
   "name": "rty-sample-hooks",
   "displayName": "Riverty Sample: Hooks",
   "version": "1.0.0",
-  "description": "Sample plugin with a skill plus lifecycle hooks, for Cursor.",
+  "description": "Sample plugin with a skill plus lifecycle hooks — validates the marketplace's hooks primitive detection and install path.",
   "author": { "name": "Riverty Technology Innovation" },
+  "homepage": "https://github.com/diogolopesAV/rty-aip-hub",
+  "repository": "https://github.com/diogolopesAV/rty-aip-hub",
   "license": "MIT",
+  "keywords": ["skill", "hook", "sample"],
+  "category": "Developer Tools",
   "skills": "./skills/",
   "hooks": "./hooks/cursor.json"
 }

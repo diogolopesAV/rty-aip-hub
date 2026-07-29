@@ -2,9 +2,12 @@
   "name": "rty-sample-hooks",
   "displayName": "Riverty Sample: Hooks",
   "version": "1.0.0",
-  "description": "Sample plugin with a skill plus lifecycle hooks, for Claude Code.",
-  "author": { "name": "Riverty Technology Innovation" },
+  "description": "Sample plugin with a skill plus lifecycle hooks — validates the marketplace's hooks primitive detection and install path.",
+  "author": { "name": "Riverty Technology Innovation", "url": "https://github.com/Riverty-Tech-Innovation" },
+  "homepage": "https://github.com/diogolopesAV/rty-aip-hub",
+  "repository": "https://github.com/diogolopesAV/rty-aip-hub",
   "license": "MIT",
+  "keywords": ["skill", "hook", "sample"],
   "skills": "./skills/",
   "hooks": "./hooks/claude-codex.json"
 }
