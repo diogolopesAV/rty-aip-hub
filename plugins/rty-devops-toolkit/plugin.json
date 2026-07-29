@@ -1,0 +1,16 @@
+{
+  "name": "rty-devops-toolkit",
+  "version": "1.0.0",
+  "description": "DevOps automation toolkit — deploy workflows, database migrations, secrets scanning, infrastructure auditing, and incident response runbooks with AI-guided steps.",
+  "author": { "name": "Riverty Technology Innovation", "url": "https://github.com/Riverty-Tech-Innovation" },
+  "homepage": "https://github.com/diogolopesAV/rty-aip-hub",
+  "repository": "https://github.com/diogolopesAV/rty-aip-hub",
+  "license": "MIT",
+  "keywords": ["devops", "deploy", "database", "security", "incident-response", "infrastructure"],
+  "category": "Developer Tools",
+  "skills": "./skills/",
+  "hooks": "hooks/copilot.json",
+  "mcpServers": "./.mcp.json",
+  "agents": "copilot-agents/",
+  "rules": "./rules/"
+}

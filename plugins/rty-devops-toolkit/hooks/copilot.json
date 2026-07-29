@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "command": "echo '[rty-devops-toolkit] Session started — Copilot DevOps hooks active.'",
+        "timeoutSec": 10
+      }
+    ],
+    "preToolUse": [
+      {
+        "type": "command",
+        "matcher": "bash",
+        "command": "echo '[rty-devops-toolkit] PreToolUse: bash intercepted by DevOps policy guard.'",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "rty-devops-toolkit",
+  "version": "1.0.0",
+  "description": "DevOps automation toolkit — deploy workflows, database migrations, secrets scanning, infrastructure auditing, and incident response runbooks with AI-guided steps.",
+  "author": { "name": "Riverty Technology Innovation" },
+  "homepage": "https://github.com/diogolopesAV/rty-aip-hub",
+  "repository": "https://github.com/diogolopesAV/rty-aip-hub",
+  "license": "MIT",
+  "keywords": ["devops", "deploy", "database", "security", "incident-response", "infrastructure"],
+  "skills": "./skills/",
+  "hooks": "./hooks/claude-codex.json",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Riverty DevOps Toolkit",
+    "shortDescription": "AI-guided DevOps automation for deploy, DB, secrets, infra, and incidents.",
+    "longDescription": "A comprehensive DevOps toolkit plugin providing five AI-guided skills: deploy-workflow for release automation, database-migrations for schema change management, secrets-scanner for credential leak detection, infrastructure-audit for compliance checks, and incident-response for structured runbooks. Bundles lifecycle hooks and an audit agent.",
+    "developerName": "Riverty Technology Innovation",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write", "Bash"],
+    "defaultPrompt": "Run the rty-devops-toolkit deployment checklist."
+  }
+}

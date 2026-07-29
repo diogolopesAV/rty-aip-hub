@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "echo '[rty-devops-toolkit] Session started — Cursor DevOps hooks active.'"
+      }
+    ],
+    "preToolUse": [
+      {
+        "command": "echo '[rty-devops-toolkit] PreToolUse: tool intercepted by DevOps policy guard.'"
+      }
+    ]
+  }
+}

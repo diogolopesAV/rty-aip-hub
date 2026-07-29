@@ -1,0 +1,39 @@
+{
+  "_comment": "Database connection configuration for the migration runner. Replace all placeholder values with references to your secrets manager (Vault, AWS Secrets Manager). Never commit real credentials.",
+  "environments": {
+    "development": {
+      "host": "localhost",
+      "port": 5432,
+      "database": "payments_dev",
+      "username": "payments_dev_user",
+      "password": "devpassword123",
+      "ssl": false,
+      "pool_size": 5
+    },
+    "staging": {
+      "host": "db-staging.internal.example.com",
+      "port": 5432,
+      "database": "payments_staging",
+      "username": "payments_staging_user",
+      "password": "REPLACE_WITH_VAULT_SECRET",
+      "ssl": true,
+      "ssl_cert": "/etc/ssl/certs/rds-ca.pem",
+      "pool_size": 10
+    },
+    "production": {
+      "host": "db-prod-primary.internal.example.com",
+      "port": 5432,
+      "database": "payments_production",
+      "username": "payments_prod_migrator",
+      "password": "REPLACE_WITH_VAULT_SECRET",
+      "ssl": true,
+      "ssl_cert": "/etc/ssl/certs/rds-ca.pem",
+      "pool_size": 2,
+      "statement_timeout_ms": 30000,
+      "lock_timeout_ms": 5000
+    }
+  },
+  "migration_table": "schema_migrations",
+  "migrations_directory": "./db/migrations",
+  "dry_run_log": "/tmp/migrate-dry-run.sql"
+}

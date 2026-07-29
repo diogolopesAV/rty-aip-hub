@@ -1,0 +1,55 @@
+{
+  "_comment": "Templates for incident artifacts: status page API payload and Jira ticket shape.",
+  "status_page_update": {
+    "_comment": "POST to status page API. Replace STATUSPAGE_API_KEY via Vault.",
+    "api_endpoint": "https://api.statuspage.io/v1/pages/{page_id}/incidents",
+    "api_key_header": "Authorization: OAuth STATUSPAGE_API_KEY_REPLACE_WITH_VAULT_SECRET",
+    "payload": {
+      "incident": {
+        "name": "Service Degradation — <service>",
+        "status": "investigating",
+        "impact_override": "major",
+        "body": "We are investigating an issue affecting <service>. More details to follow.",
+        "component_ids": ["REPLACE_WITH_COMPONENT_ID"],
+        "components": {
+          "REPLACE_WITH_COMPONENT_ID": "degraded_performance"
+        },
+        "deliver_notifications": true
+      }
+    }
+  },
+  "jira_ticket": {
+    "project": "INC",
+    "issuetype": "Incident",
+    "summary": "[<SEV-N>] <Service> — <short description>",
+    "description": "## Impact\n<description>\n\n## Timeline\nTBD\n\n## Commander\n<name>\n\n## Status page link\n<url>",
+    "priority": {
+      "SEV-1": "Highest",
+      "SEV-2": "High",
+      "SEV-3": "Medium",
+      "SEV-4": "Low"
+    },
+    "labels": ["incident", "sev-1"],
+    "assignee": "REPLACE_WITH_COMMANDER_USERNAME"
+  },
+  "slack_webhook_payload": {
+    "_comment": "Send to SLACK_INCIDENT_WEBHOOK_URL via curl. Replace webhook URL via Vault.",
+    "webhook_url": "https://hooks.slack.com/services/REPLACE/WITH/VAULT_SECRET",
+    "payload": {
+      "text": "🚨 *INCIDENT DECLARED* — SEV-N | <service> | <commander>",
+      "channel": "#incidents",
+      "attachments": [
+        {
+          "color": "#FF0000",
+          "fields": [
+            { "title": "Service", "value": "<service>", "short": true },
+            { "title": "Severity", "value": "SEV-N", "short": true },
+            { "title": "Impact", "value": "<impact>", "short": false },
+            { "title": "Commander", "value": "@<commander>", "short": true },
+            { "title": "Jira", "value": "<ticket URL>", "short": true }
+          ]
+        }
+      ]
+    }
+  }
+}

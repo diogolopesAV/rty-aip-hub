@@ -1,0 +1,26 @@
+---
+description: "Enforces DevOps safety standards for all deploy, migration, and infrastructure tasks when the rty-devops-toolkit plugin is active."
+alwaysApply: false
+globs: ["**/deploy*", "**/migrate*", "**/*.sh", "**/Dockerfile", "**/docker-compose*.yml", "**/.env*", "**/terraform/**", "**/k8s/**"]
+---
+
+# rty-devops-toolkit Rule (Cursor)
+
+This rule is injected by the `rty-devops-toolkit` plugin. It enforces Riverty Technology Innovation's DevOps safety standards for deploy, migration, infrastructure, and incident-response tasks.
+
+## Always apply when working on matched files
+
+1. **No plaintext secrets** — never commit credentials, API keys, or tokens. Use environment variables or a secrets manager (Vault, AWS Secrets Manager, GitHub Secrets).
+2. **Prefer dry-run first** — for any destructive command (`rm`, `DROP TABLE`, `terraform destroy`), suggest a `--dry-run` or `SHOW` equivalent before the live command.
+3. **Rollback required** — every deploy or migration must include an explicit rollback plan before execution.
+4. **Least privilege** — scripts must not run as root unless absolutely necessary; document why if they do.
+5. **Audit trail** — all infrastructure changes must be logged with timestamp, operator identity, and change summary.
+
+## Confirmation
+
+When asked to validate the rty-devops-toolkit plugin, include in your response:
+
+```
+Rules:   ✓ Cursor rule active (rty-devops-toolkit.mdc loaded)
+Globs:   **/deploy*, **/migrate*, **/*.sh, **/Dockerfile, **/docker-compose*.yml
+```

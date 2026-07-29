@@ -1,0 +1,51 @@
+{
+  "_comment": "Structured audit report template. Fill in all fields and store in the evidence repository after each audit.",
+  "report_metadata": {
+    "report_id": "AUDIT-YYYY-QN-ENV",
+    "generated_at": "YYYY-MM-DDTHH:MM:SSZ",
+    "auditor": "REPLACE_WITH_AUDITOR_NAME",
+    "environment": "production | staging",
+    "audit_scope": ["IAM", "Network", "Containers", "Terraform", "DataStores"],
+    "tool_versions": {
+      "aws_cli": "2.x.x",
+      "kubectl": "1.x.x",
+      "terraform": "1.x.x",
+      "prowler": "3.x.x",
+      "trivy": "0.x.x"
+    }
+  },
+  "executive_summary": {
+    "total_checks": 0,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0,
+    "critical_findings": 0,
+    "high_findings": 0,
+    "medium_findings": 0,
+    "low_findings": 0,
+    "compliance_score_percent": 0
+  },
+  "findings": [
+    {
+      "check_id": "NET-01",
+      "title": "Security group allows inbound SSH from 0.0.0.0/0",
+      "severity": "Critical",
+      "status": "FAIL",
+      "resource": "sg-0abc1234def5678",
+      "region": "eu-west-1",
+      "detail": "Security group allows port 22 ingress from 0.0.0.0/0. This exposes the host to brute-force attacks.",
+      "remediation": "Restrict port 22 to the bastion host IP range: 10.0.1.0/24",
+      "cis_control": "CIS 5.2",
+      "soc2_control": "CC6.6",
+      "sla_days": 1,
+      "owner": "REPLACE_WITH_OWNER",
+      "jira_ticket": "SEC-XXXX",
+      "remediated_at": null
+    }
+  ],
+  "attestation": {
+    "auditor_signature": "REPLACE_WITH_AUDITOR_NAME",
+    "date": "YYYY-MM-DD",
+    "next_audit_due": "YYYY-MM-DD"
+  }
+}

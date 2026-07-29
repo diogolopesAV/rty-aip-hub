@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[rty-devops-toolkit] Session started — DevOps toolkit hooks active.'"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[rty-devops-toolkit] PreToolUse: Bash intercepted — ensure deploy scripts run in a sandboxed environment.'"
+          }
+        ]
+      }
+    ]
+  }
+}

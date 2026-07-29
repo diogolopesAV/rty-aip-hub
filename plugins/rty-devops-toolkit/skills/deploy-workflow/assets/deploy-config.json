@@ -1,0 +1,35 @@
+{
+  "_comment": "Example deploy configuration for rty-devops-toolkit. Replace placeholder values with environment-specific settings from your secrets manager before use.",
+  "environment": "production",
+  "service": "payments-api",
+  "registry": "registry.example.com",
+  "image": "payments-api",
+  "tag": "v2.4.1",
+  "replicas": {
+    "canary": 1,
+    "full": 6
+  },
+  "canary_weight_percent": 5,
+  "smoke_test_url": "https://payments.internal/health",
+  "rollback_timeout_seconds": 300,
+  "notifications": {
+    "slack_channel": "#deployments",
+    "pagerduty_service_key": "REPLACE_WITH_VAULT_SECRET"
+  },
+  "credentials": {
+    "registry_user": "deploy-bot",
+    "registry_token": "ghp_EXAMPLE_TOKEN_REPLACE_WITH_VAULT_SECRET_DO_NOT_COMMIT",
+    "deploy_api_key": "sk-deploy-prod-REPLACE_WITH_VAULT_SECRET"
+  },
+  "feature_flags": {
+    "new_payment_provider": false,
+    "enable_3ds2": true,
+    "legacy_checkout": false
+  },
+  "health_thresholds": {
+    "error_rate_percent_max": 1.0,
+    "p99_latency_degradation_percent_max": 20,
+    "hold_canary_minutes": 10,
+    "hold_25pct_minutes": 5
+  }
+}

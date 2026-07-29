@@ -1,0 +1,80 @@
+{
+  "_comment": "Example scanner findings for training and false-positive calibration. These are synthetic examples that match real secret patterns — they are NOT real credentials.",
+  "scan_metadata": {
+    "repository": "payments-api",
+    "commit": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+    "scanned_at": "2026-07-01T10:30:00Z",
+    "scanner_version": "1.4.2"
+  },
+  "findings": [
+    {
+      "id": "finding-001",
+      "rule": "GH-001",
+      "severity": "CRITICAL",
+      "file": "config/legacy-deploy.sh",
+      "line": 14,
+      "match": "GITHUB_TOKEN=ghp_ExAmPlEtOkEn1234567890abcdef12",
+      "entropy": 4.21,
+      "classification": "true_positive",
+      "remediation": "Rotate token immediately. Remove from file and load from GITHUB_TOKEN environment variable instead.",
+      "false_positive_reason": null
+    },
+    {
+      "id": "finding-002",
+      "rule": "DB-003",
+      "severity": "HIGH",
+      "file": "scripts/seed-db.sh",
+      "line": 8,
+      "match": "DB_PASSWORD=MyOldProductionPassword99!",
+      "entropy": 3.87,
+      "classification": "true_positive",
+      "remediation": "Rotate database password. Load from Vault: vault kv get secret/payments/db",
+      "false_positive_reason": null
+    },
+    {
+      "id": "finding-003",
+      "rule": "KEY-003",
+      "severity": "CRITICAL",
+      "file": "tests/fixtures/payment-test.json",
+      "line": 22,
+      "match": "sk_live_EXAMPLE1234567890_FAKE",
+      "entropy": 4.55,
+      "classification": "false_positive",
+      "remediation": null,
+      "false_positive_reason": "Test fixture uses a syntactically valid but semantically fake key. Confirmed non-functional. Add # nosec."
+    },
+    {
+      "id": "finding-004",
+      "rule": "AWS-001",
+      "severity": "CRITICAL",
+      "file": ".env.example",
+      "line": 3,
+      "match": "AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE",
+      "entropy": 3.94,
+      "classification": "false_positive",
+      "remediation": null,
+      "false_positive_reason": "AWS documentation example key — well-known placeholder, not a real credential."
+    },
+    {
+      "id": "finding-005",
+      "rule": "PK-001",
+      "severity": "CRITICAL",
+      "file": "certs/jwt-signing.pem",
+      "line": 1,
+      "match": "-----BEGIN RSA PRIVATE KEY-----",
+      "entropy": null,
+      "classification": "true_positive",
+      "remediation": "Private key must not be committed. Remove file, add to .gitignore, and load from Vault PKI secrets engine.",
+      "false_positive_reason": null
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "critical": 3,
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "true_positives": 3,
+    "false_positives": 2
+  }
+}
