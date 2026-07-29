@@ -53,6 +53,20 @@
       ]
     },
     {
+      "name": "rty-devops-toolkit",
+      "source": "plugins/rty-devops-toolkit",
+      "description": "DevOps automation toolkit — deploy workflows, database migrations, secrets scanning, infrastructure auditing, and incident response",
+      "category": "Developer Tools",
+      "keywords": [
+        "devops",
+        "deploy",
+        "database",
+        "security",
+        "incident-response",
+        "infrastructure"
+      ]
+    },
+    {
       "name": "rty-test-plugin",
       "source": {
         "source": "github",
