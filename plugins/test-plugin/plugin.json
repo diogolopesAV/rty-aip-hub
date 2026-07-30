@@ -1,0 +1,10 @@
+{
+  "name": "test-plugin",
+  "description": "This is a test for a creation of plugin and skill",
+  "version": "1.0.0",
+  "author": {
+    "name": "Riverty Technology Innovation"
+  },
+  "license": "MIT",
+  "skills": "./skills/"
+}
