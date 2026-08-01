@@ -1,0 +1,18 @@
+{
+  "name": "test",
+  "description": "nejncw ciwenciwecmee, for Codex CLI.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Riverty Technology Innovation"
+  },
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Test",
+    "shortDescription": "nejncw ciwenciwecmee",
+    "longDescription": "nejncw ciwenciwecmee",
+    "developerName": "Riverty Technology Innovation",
+    "category": "test",
+    "defaultPrompt": "Run the test checklist."
+  }
+}
