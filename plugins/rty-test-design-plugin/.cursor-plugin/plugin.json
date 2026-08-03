@@ -1,0 +1,11 @@
+{
+  "name": "rty-test-design-plugin",
+  "displayName": "Test Design Plugin",
+  "description": "plugin for testing the Pull Request from Diogo's implementation . Currently testing: new plugin into rty-hub main, for Cursor.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Riverty Technology Innovation"
+  },
+  "license": "MIT",
+  "skills": "./skills/"
+}
