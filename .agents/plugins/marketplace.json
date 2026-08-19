@@ -70,7 +70,8 @@
         "source": "url",
         "url": "diogolopesAV/rty-test-plugin",
         "ref": "93826905c974d0ea45f938d500e8a1994630048f",
-        "sha": "93826905c974d0ea45f938d500e8a1994630048f"
+        "sha": "93826905c974d0ea45f938d500e8a1994630048f",
+        "tag_pattern": "v{version}"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -85,7 +86,8 @@
         "url": "https://github.com/RebirthUO/plugin",
         "path": "plugins/modernuo",
         "ref": "4d471624f81e9b6bcb33809b2dd7dda940e959c2",
-        "sha": "4d471624f81e9b6bcb33809b2dd7dda940e959c2"
+        "sha": "4d471624f81e9b6bcb33809b2dd7dda940e959c2",
+        "tag_pattern": "v{version}"
       },
       "policy": {
         "installation": "AVAILABLE",
