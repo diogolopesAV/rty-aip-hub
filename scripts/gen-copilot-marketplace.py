@@ -13,7 +13,8 @@ Format sources:
 Usage:
     python scripts/gen-copilot-marketplace.py                        # Copilot (default)
     python scripts/gen-copilot-marketplace.py --format cursor        # Cursor
-    python scripts/gen-copilot-marketplace.py --check                # validate (CI mode)
+    python scripts/gen-copilot-marketplace.py --validate-only        # structure only (PR CI)
+    python scripts/gen-copilot-marketplace.py --check                # structure + committed sync
     python scripts/gen-copilot-marketplace.py --format cursor --check
 
 Run from the repository root.
@@ -222,15 +223,27 @@ def main() -> None:
         help="Target marketplace format (default: copilot).",
     )
     parser.add_argument(
+        "--validate-only",
+        action="store_true",
+        help=(
+            "Validate the catalog that would be generated from apm.yml without writing "
+            "or comparing to committed marketplace files. Preferred for PR CI because "
+            "pack.yml regenerates committed catalogs on merge to main."
+        ),
+    )
+    parser.add_argument(
         "--check",
         action="store_true",
         help=(
             "Validate the catalog that would be generated without writing the output file. "
-            "Exits non-zero if validation fails or if the output file is out of date "
-            "(useful as a CI gate on PRs)."
+            "Exits non-zero if validation fails or if the output file is out of date."
         ),
     )
     args = parser.parse_args()
+
+    if args.validate_only and args.check:
+        print("error: use either --validate-only or --check, not both", file=sys.stderr)
+        sys.exit(1)
 
     output_path = _FORMAT_OUTPUT_PATHS[args.format]
 
@@ -249,10 +262,15 @@ def main() -> None:
             print(f"  - {err}", file=sys.stderr)
         sys.exit(1)
 
+    plugin_count = len(catalog["plugins"])
     new_json = json.dumps(catalog, indent=2, ensure_ascii=False) + "\n"
 
+    if args.validate_only:
+        print(f"validate-only passed: {args.format} catalog ({plugin_count} plugin(s))")
+        return
+
     if args.check:
-        # CI mode: compare against what's currently committed
+        # Sync mode: compare against what's currently committed
         if not os.path.isfile(output_path):
             print(
                 f"check failed: {output_path} does not exist — run "
@@ -281,13 +299,11 @@ def main() -> None:
             print("".join(diff), file=sys.stderr)
             sys.exit(1)
 
-        plugin_count = len(catalog["plugins"])
         print(f"check passed: {output_path} is up to date ({plugin_count} plugin(s))")
     else:
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, "w", encoding="utf-8") as f:
             f.write(new_json)
-        plugin_count = len(catalog["plugins"])
         print(f"generated {output_path} ({plugin_count} plugin(s))")
 
 
