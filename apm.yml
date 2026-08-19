@@ -1,71 +1,91 @@
 name: rty-aip-hub
 version: 1.0.0
-description: "Riverty AI Package Hub — curated skills and AI capabilities for the Riverty platform"
+description: Riverty AI Package Hub — curated skills and AI capabilities for the Riverty
+  platform
 license: MIT
-# targets: needed for CI — microsoft/apm-action@v1 auto-runs apm install on a
-# clean runner with no harness markers. Does NOT affect remote consumers; they
-# must pass --target <harness> in fresh directories.
 targets:
   - claude
   - cursor
   - codex
   - copilot
-
 marketplace:
   name: rty-hub
   owner:
     name: Riverty Technology Innovation
     url: https://github.com/Riverty-Tech-Innovation
-
   outputs:
     claude: {}
     codex: {}
-
   packages:
-    # Sample/fixture plugins — maintained in this repo under plugins/.
-    # Each isolates a different primitive combination to exercise the full
-    # marketplace catalog + install surface.
     - name: rty-sample-skills-only
       source: ./plugins/rty-sample-skills-only
       category: Developer Tools
-      description: "Sample plugin with a single skill and no other primitives"
-      tags: [skill, sample]
+      description: Sample plugin with a single skill and no other primitives
+      tags:
+        - skill
+        - sample
     - name: rty-sample-hooks
       source: ./plugins/rty-sample-hooks
       category: Developer Tools
-      description: "Sample plugin with a skill plus lifecycle hooks"
-      tags: [skill, hook, sample]
+      description: Sample plugin with a skill plus lifecycle hooks
+      tags:
+        - skill
+        - hook
+        - sample
     - name: rty-sample-integration
       source: ./plugins/rty-sample-integration
       category: Developer Tools
-      description: "Sample plugin with a skill, an MCP server, and an agent"
-      tags: [skill, mcp, agent, sample]
+      description: Sample plugin with a skill, an MCP server, and an agent
+      tags:
+        - skill
+        - mcp
+        - agent
+        - sample
     - name: rty-sample-governed
       source: ./plugins/rty-sample-governed
       category: Developer Tools
-      description: "Sample plugin with a multi-file skill plus Cursor rules"
-      tags: [skill, rules, sample]
+      description: Sample plugin with a multi-file skill plus Cursor rules
+      tags:
+        - skill
+        - rules
+        - sample
     - name: rty-devops-toolkit
       source: ./plugins/rty-devops-toolkit
       category: Developer Tools
-      description: "DevOps automation toolkit — deploy workflows, database migrations, secrets scanning, infrastructure auditing, and incident response"
-      tags: [devops, deploy, database, security, incident-response, infrastructure]
-    # External plugin — referenced directly from its own repo.
-    # To update: find the new commit SHA with: git ls-remote https://github.com/diogolopesAV/rty-test-plugin.git main
+      description: DevOps automation toolkit — deploy workflows, database migrations,
+        secrets scanning, infrastructure auditing, and incident response
+      tags:
+        - devops
+        - deploy
+        - database
+        - security
+        - incident-response
+        - infrastructure
     - name: rty-test-plugin
       source: diogolopesAV/rty-test-plugin
       ref: 93826905c974d0ea45f938d500e8a1994630048f
       category: Developer Tools
-      description: "Reference plugin demonstrating all supported plugin primitives (skills, hooks, MCP, rules)"
-      tags: [skill, test, hooks, mcp]
+      description: Reference plugin demonstrating all supported plugin primitives
+        (skills, hooks, MCP, rules)
+      tags:
+        - skill
+        - test
+        - hooks
+        - mcp
     - name: modernuo-plugin
       source: RebirthUO/plugin
       subdir: plugins/modernuo
       ref: 4d471624f81e9b6bcb33809b2dd7dda940e959c2
       category: Developer Tools
-      description: "ModernUO plugin fetched from a remote repository's subdirectory"
-      tags: [modernuo, plugin]
-# Full platform baseline: apm install diogolopesAV/rty-aip-hub installs all plugins.
+      description: ModernUO plugin fetched from a remote repository's subdirectory
+      tags:
+        - modernuo
+        - plugin
+    - name: caveman
+      source: JuliusBrussee/caveman
+      ref: 99a9aa2f5a45097fc3563febea7d0baf64407441
+      category: test
+      description: This is a test for caveman
 dependencies:
   apm:
     - diogolopesAV/rty-aip-hub/plugins/rty-sample-skills-only
@@ -75,3 +95,4 @@ dependencies:
     - diogolopesAV/rty-aip-hub/plugins/rty-devops-toolkit
     - diogolopesAV/rty-test-plugin#93826905c974d0ea45f938d500e8a1994630048f
     - RebirthUO/plugin/plugins/modernuo#4d471624f81e9b6bcb33809b2dd7dda940e959c2
+    - JuliusBrussee/caveman#99a9aa2f5a45097fc3563febea7d0baf64407441
