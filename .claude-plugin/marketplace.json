@@ -97,6 +97,18 @@
         "sha": "4d471624f81e9b6bcb33809b2dd7dda940e959c2",
         "tag_pattern": "v{version}"
       }
+    },
+    {
+      "name": "caveman",
+      "description": "This is a test for caveman",
+      "category": "test",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuliusBrussee/caveman",
+        "ref": "99a9aa2f5a45097fc3563febea7d0baf64407441",
+        "sha": "99a9aa2f5a45097fc3563febea7d0baf64407441",
+        "tag_pattern": "v{version}"
+      }
     }
   ]
 }

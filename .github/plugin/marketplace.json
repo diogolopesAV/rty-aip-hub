@@ -96,6 +96,16 @@
         "modernuo",
         "plugin"
       ]
+    },
+    {
+      "name": "caveman",
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman",
+        "sha": "99a9aa2f5a45097fc3563febea7d0baf64407441"
+      },
+      "description": "This is a test for caveman",
+      "category": "test"
     }
   ]
 }
