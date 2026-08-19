@@ -86,6 +86,11 @@ marketplace:
       ref: 99a9aa2f5a45097fc3563febea7d0baf64407441
       category: test
       description: This is a test for caveman
+    - name: ponytail
+      source: dietrichgebert/ponytail
+      ref: 2ed6c52c9d7e5e56942508591085fd45dea277d3
+      category: test
+      description: Test for ponytail plugin
 dependencies:
   apm:
     - diogolopesAV/rty-aip-hub/plugins/rty-sample-skills-only
@@ -96,3 +101,4 @@ dependencies:
     - diogolopesAV/rty-test-plugin#93826905c974d0ea45f938d500e8a1994630048f
     - RebirthUO/plugin/plugins/modernuo#4d471624f81e9b6bcb33809b2dd7dda940e959c2
     - JuliusBrussee/caveman#99a9aa2f5a45097fc3563febea7d0baf64407441
+    - dietrichgebert/ponytail#2ed6c52c9d7e5e56942508591085fd45dea277d3
